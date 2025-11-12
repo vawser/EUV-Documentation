@@ -25,6 +25,35 @@ Note: the count parameter is what can replicate the old any/all behavior from EU
 By default the scopes act as any scopes, returning true if there is one match. Setting the count to a number higher than 1 or to all changes this.
 
 #-----------------
+# Lists
+#-----------------
+any_in_global_list = {
+    list = <string> / variable = <string>
+    
+    # How many elements of this list to check
+    count = <int> / all
+    
+    # How much of the list in a percentage to check (optional)
+    percent = <float>
+    
+    # The triggers to check for elements in this list
+    <triggers>
+}
+# Iterate through all items in global list. list = name or variable = name 
+# Use "list" for lists created by add_to_(temporary)_list
+# Use "variable" for lists created by add_to_(global/local)_variable_list
+
+any_in_list = { }
+# Iterate through all items in list. list = name or variable = name 
+# Use "list" for lists created by add_to_(temporary)_list
+# Use "variable" for lists created by add_to_(global/local)_variable_list
+
+any_in_local_list = { }
+# Iterate through all items in local list. list = name or variable = name
+# Use "list" for lists created by add_to_(temporary)_list
+# Use "variable" for lists created by add_to_(global/local)_variable_list
+
+#-----------------
 # Scope: None
 #-----------------
 any_active_estate -> estate_type
@@ -35,6 +64,81 @@ any_area -> area
 
 any_building_type -> building_type
 # Iterate through all the building types
+
+any_colonial_country -> country
+# Iterate through all colonial countries in the world 
+
+any_colonial_overlord -> country
+# Iterate through all colonial overlord countries in the world 
+
+any_colonial_top_overlord -> country
+# Iterate through all countries in the world that have a colonial country among their subjects or their subjects subjects and so on 
+
+any_continent -> continent
+# Iterate through all existing continents
+
+any_country -> country
+# Iterate through all existing countries 
+
+any_country_of_country_type -> country
+# Iterate through all countries of the specified type. 
+
+any_country_with_succession_law -> country
+# Iterate through all countries with a cached succession law (set cached = yes in the heir_selection to use this) 
+
+any_culture -> culture
+# Iterate through all cultures 
+
+any_goods -> goods
+# Iterate through all types of goods 
+
+any_great_power -> country
+# Iterate through all great powers 
+
+any_international_organization -> international_organization
+# Iterate through all international organizations 
+
+any_location_in_the_world -> location
+# Iterate through all location 
+
+any_market_in_world -> market
+# Iterate through all markets in the world 
+
+any_mercenary -> mercenary
+# Iterate through all mercenaries in the world 
+
+any_ownable_location -> location
+# Iterate through all ownable location 
+
+any_privateer -> privateer
+# Iterate through all privateers in the world 
+
+any_production_method -> production_method
+# Iterate through all types of production methods. 
+
+any_province_definition -> province_definition
+# Iterate through all existing province_definition
+
+any_region -> region
+# Iterate through all existing regions 
+
+any_religion -> religion
+# Iterate through all religions 
+
+any_revolutionary -> country
+# Iterate through all revolutionary states 
+
+any_road_type -> road_type
+# Iterate through all the road types 
+
+any_sub_continent -> sub_continent
+# Iterate through all existing sub_continents 
+
+any_war -> war
+# Iterate through all wars going on globally 
+
+any_work_of_art -> work_of_art
+# Iterate through all WorkOfArts in the world 
 
 #-----------------
 # Scope: Country
@@ -99,6 +203,303 @@ any_core_location -> location
 any_country_annexing_us -> country
 # Iterate through all countries which are currently annexing the current country scope. 
 
+any_country_at_war_with -> country
+# Iterate through all countries at war with 
+
+any_country_in_diplomatic_range -> country
+# Iterate through all countries in diplomatic range 
+
+any_country_in_hierarchy -> country
+# Iterate through every country in the entire overlord/subject hierarchy, from the independent top overlord to the deepest subjects
+
+any_country_lent_to -> country
+# Iterate through all countries a country has lent to
+
+any_country_sub_unit -> sub_unit
+# Iterate through all subunits in all units in a country 
+
+any_country_that_can_be_called_defensively -> country
+# Iterate through all countries that may be called into a defensive war. 
+
+any_country_that_can_be_called_offensively -> country
+# Iterate through all countries that may be called into an offensive war. 
+
+any_country_together_in_war_with -> country
+# Iterate through all countries which are an ally in any of the country scope's wars 
+
+any_country_we_are_annexing -> country
+# Iterate through all countries which are currently annexed by the current country scope. 
+
+any_country_with_antagonism_against_us -> country
+# Iterate through all countries who have antagonism against us 
+
+any_country_with_coalition_grade_antagonism_against_us -> country
+# Iterate through all countries who have coalition grade antagonism against us 
+
+any_current_avatars -> avatar
+# Iterate through all Avatars a country has 
+
+any_current_gods -> god
+# Iterate through all Gods a country worships 
+
+any_current_law -> law
+# Iterate through all laws of a country. 
+
+any_current_policy -> policy
+# Iterate through all policies that are codified in the country 
+
+any_current_reforms -> government_reform
+# Iterate through all Government Reforms a country has 
+
+any_current_war -> war
+# Iterate through all wars of a country
+
+any_disloyal_subject -> country
+# Iterate through all loyal subject countries 
+
+any_dynasty -> dynasty
+# Iterate through all dynasties in a country 
+
+any_election_candidates -> character
+# Iterate through all election candidates of a country with elections! 
+
+any_enemy -> country
+# Iterate through all Enemy countries 
+
+any_enemy_war_leader -> country
+# Iterate through all countries which are leading a war against the scope 
+
+any_estate -> estate
+# Iterate through all estates in a country 
+
+any_estate_privilege -> estate_privilege
+# Iterate through all current estate privileges of a Country 
+
+any_exploration_from_country -> exploration
+# Iterate through all Explorations a country has 
+
+any_fort_in_country -> location
+# Iterate through all Forts in a country
+
+any_friendly_country -> country
+# Iterate through all countries with relations marked as friendly 
+
+any_friendly_or_high_opinion_country -> country
+# Iterate through all countries with relations marked as friendly or that we have a high opinion of set in defines 
+
+any_friendly_to_friendly_country -> country
+# Iterate through all friends of our friends 
+
+any_friendly_to_hostile_country -> country
+# Iterate through all friends of our enemies 
+
+any_heathen_location -> location
+# Iterate through all heathen locations in a country 
+
+any_heretic_location -> location
+# Iterate through all Heretic locations in a country 
+
+any_hired_mercenary -> mercenary
+# Iterate through mercenaries a country has hired 
+
+any_historical_enemy -> country
+# Iterate through all historical Enemy countries 
+
+any_historical_rival -> country
+# Iterate through all historical rival countries 
+
+any_holy_site_in_country -> holy_site
+# Iterate through all Holy Sites in a country 
+
+any_hostile_country -> country
+# Iterate through all countries with relations marked as hostile 
+
+any_hostile_or_low_opinion_country -> country
+# Iterate through all countries with relations marked as hostile or that we have a low opinion of set in defines 
+
+any_hostile_to_friendly_country -> country
+# Iterate through all enemies of our friends 
+
+any_hostile_to_hostile_country -> country
+# Iterate through all enemies of our enemies 
+
+any_institutions_embraced -> institution
+# Iterate through all institutions a country has embraced 
+
+any_international_organizations_member_of -> internation_organization
+# Iterate through all international organizations a country is a member of 
+
+any_international_organizations_target_of -> internal_organization
+# Iterate through all international organizations a country is a target of 
+
+any_invited_religious_figure -> character
+# Iterate through all invited religious figures in a Country
+
+any_known_country -> country
+# Iterate through all known countries 
+
+any_lent_loan -> loan
+# Iterate through all loans that a country lent 
+
+any_loan -> loan
+# Iterate through all loans in a country 
+
+any_loan_lent_to_country -> country
+# Iterate through all loans a country has lent to the supplied borrower country 
+
+any_loyal_subject -> country
+# Iterate through all loyal subject countries 
+
+any_maritime_area -> area
+# Iterate through all maritime areas for a country
+
+any_market_center_in_country -> market
+# Iterate through all markets in a country which market centers are owned by the country 
+
+any_market_present_in_country -> market
+# Iterate through all markets in a country 
+
+any_market_with_merchants -> market
+# Iterate through all markets a country has active merchants 
+
+any_navy -> unit
+# Iterate through all navies in a country
+
+any_neighbor_country -> country
+# Iterate through all neighbour countries 
+
+any_non_state_religion_location -> location
+# Iterate through all NonStateReligion locations in a country 
+
+any_other_core_country -> country
+# Iterate through all other countries which have a core on the current country 
+
+any_other_country -> country
+# Iterate through all other countries 
+
+any_other_great_power -> country
+# Iterate through all other great powers
+
+any_other_revolutionary -> country
+# Iterate through all other revolutionary countries 
+
+any_overlord_or_above -> country
+# Iterate through your overlord, your overlord's overlord, and so on 
+
+any_owned_building -> building
+# Iterate through all the owned buildings in a country 
+
+any_owned_foreign_building -> building
+# Iterate through all the owned foreign buildings in a country 
+
+any_owned_foreign_building_location -> location
+# Iterate through all the location of owned foreign buildings in a country 
+
+any_owned_foreign_building_region -> region
+# Iterate through all the regions of owned foreign buildings in a country 
+
+any_owned_location -> location
+# Iterate through all owned location in a country
+
+any_owned_nomad_pop -> pop
+# Iterate through all owned nomad pops in a country 
+
+any_owned_non_rural_location -> location
+# Iterate through all owned non-rural locations in a country 
+
+any_owned_rural_location -> location
+# Iterate through all owned rural locations in a country 
+
+any_past_liturgical_dialect -> country
+# Iterate through all liturgical dialects a country has had before 
+
+any_political_border_location -> location
+# Iterate through all owned location in a country which border another country. 
+
+any_port_in_country -> location
+# Iterate through all Ports in a country 
+
+any_possible_disaster -> disaster
+# Iterate through all possible disasters for a country 
+
+any_possible_policy -> policy
+# Iterate through all possible policies of a Country that is not currently implemeted 
+
+any_possible_recruit_location -> location
+# Iterate through all possible recruit locations in a country 
+
+any_present_culture_in_country -> culture
+# Iterate through all cultures present in the country. 
+
+any_present_religion_in_country -> religion
+# Iterate through all religions present in the country. 
+
+any_primary_or_accepted_culture -> culture
+# Iterate through primary culture and all accepted cultures in a country. Primary is ordered first. 
+
+any_primary_or_accepted_tolerated_culture -> culture
+# Iterate through primary culture and all accepted and all tolerated cultures in a country. Primary is ordered first. 
+
+any_privateer_from_country -> country
+# Iterate through all privateers a country has
+
+any_province -> province
+# Iterate through all provinces in a country 
+
+any_rebel -> rebels
+# Iterate through all Rebels in a country
+
+any_related_country -> country
+# Iterate through all related countries
+
+any_religious_aspect -> religious_aspect
+# Iterate through all religious aspects of a Country
+
+any_religious_focus -> religious_focus
+# Iterate through all completed religious focuses of a Country 
+
+any_rented_out_mercenary -> mercenary
+# Iterate through mercenaries a country has rented out to the market
+
+any_rival -> country
+# Iterate through all rival countries
+
+any_royal_marriage -> country
+# Iterate through all royal married countries 
+
+any_ruler -> character
+# Iterate through all characters that have ever been rulers in a country, including the dead
+
+any_spy_network_built_in_us -> country
+# Iterate through all countries building spy networks 
+
+any_subject -> country
+# Iterate through all subject countries 
+
+any_subject_or_below -> country
+# Iterate through all subject countries and their subject countries, and so on 
+
+any_tolerated_culture -> culture
+# Iterate through all Tolerated cultures in a country 
+
+any_trade -> trade
+# Iterate through all trades in a Country
+
+any_union_partner -> country
+# Iterate through all countries which are in a personal union with the current country scope. 
+
+any_unit -> unit
+# Iterate through all units in a country
+
+any_work_of_art_in_country -> work_of_art
+# Iterate through all work_of_art in a country 
+
+any_possible_parliament_issue -> parliament_issue
+# Iterate through all possible parliament issues in a country's parliament 
+
+any_pop -> pop
+# Iterate through all pops in a country 
+
 #-----------------
 # Scope: Character
 #-----------------
@@ -159,6 +560,21 @@ any_present_country -> country
 any_present_overlord -> country
 # Iterate through all countries which have a subject in the specified geography 
 
+any_location_in_sub_continent -> location
+# Iterate through all Locations in a sub-continent 
+
+any_ownable_location_in_sub_continent -> location
+# Iterate through all ownable Locations in a sub continent 
+
+any_region_in_continent -> region
+# Iterate through all regions in a sub-continent 
+
+#-----------------
+# Scope: Province
+#----------------- 
+any_location_in_province -> location
+# Iterate through all Locations in a province 
+
 #-----------------
 # Scope: Province Definition
 #----------------- 
@@ -170,6 +586,24 @@ any_present_country -> country
 
 any_present_overlord -> country
 # Iterate through all countries which have a subject in the specified geography 
+
+any_east_of_province_definition -> province_definition
+# Iterate through all province-definitions east of a province-definition 
+
+any_location_in_province_definition -> location
+# Iterate through all Locations in a province definition 
+
+any_neighbor_province_definition -> province_definition
+# Iterate through all neighboring ProvinceDefinitions in a ProvinceDefinition
+
+any_ownable_location_in_province_definition -> location
+# Iterate through all ownable Locations in a province definition 
+
+any_province_in_province_definition -> province
+# Iterate through all provinces in a province-definition
+
+any_west_of_province_definition -> province_definition
+# Iterate through all province-definitions west of a province-definition 
 
 #-----------------
 # Scope: Region
@@ -185,6 +619,18 @@ any_present_country -> country
 
 any_present_overlord -> country
 # Iterate through all countries which have a subject in the specified geography 
+
+any_area_in_region -> area
+# Iterate through all areas in a region 
+
+any_location_in_region -> location
+# Iterate through all Locations in a region 
+
+any_ownable_location_in_region -> location
+# Iterate through all ownable Locations in a region 
+
+any_owner_in_region -> country
+# Iterate through all the countries that own locations in a region 
 
 #-----------------
 # Scope: Area
@@ -231,6 +677,60 @@ any_present_country -> country
 any_present_overlord -> country
 # Iterate through all countries which have a subject in the specified geography 
 
+any_pop -> pop
+# Iterate through all pops in a location
+
+any_buildings_in_location -> building
+# Iterate through all buildings in a location 
+
+any_coast_border_location -> location
+# Iterate through all bordering, or across one seazone of a location 
+
+any_connected_location -> location
+# Iterate through all locations in the same country as the scope location that are connected by land or strait
+
+any_core_in_location -> location
+# Iterate through all cores in a location
+
+any_export_from_location -> location
+# Iterate through all exports from location 
+
+any_foreign_building_countries_in_location -> country
+# Iterate through all foreign building countries in a location 
+
+any_foreign_buildings_in_location -> building
+# Iterate through all foreign buildings in a location 
+
+any_friendly_coast_border_location -> location
+# Iterate through all friendly bordering, or across one seazone of a location 
+
+any_import_from_location -> location
+# Iterate through all Imports from location 
+
+any_international_organization_owner -> internal_organization
+# Iterate through all international organizations which own the location scope 
+
+any_neighbor_location -> location
+# Iterate through all neighbors of a location 
+
+any_nomad_countries_in_location -> country
+# Iterate through all nomad pop countries in a location 
+
+any_present_culture_in_location -> culture
+# Iterate through all cultures present in the location. 
+
+any_present_religion_in_location -> religion
+# Iterate through all religions present in the location. 
+
+any_unit_in_location -> unit
+# Iterate through all units in a location 
+
+any_weather_system_in_location -> weather_system
+# Iterate through all weather systems in a location 
+
+any_work_of_art_in_location -> work_of_art
+# Iterate through all work_of_art in a location 
+
 #-----------------
 # Scope: Building
 #-----------------
@@ -244,14 +744,43 @@ any_construction_material_for_building_type -> goods
 # Iterate through all goods required to construct a building type
 
 #-----------------
-# Scope: Unit
+# Scope: Market
 #-----------------
+any_export -> trade
+# Iterate through all exports in a market 
+
+any_import -> trade
+# Iterate through all imports in a market
+
+any_location_in_market -> location
+# Iterate through all locations in a market
+
+any_merchant_in_market -> country
+# Iterate through all merchants in a market 
 
 #-----------------
 # Scope: War
 #-----------------
 any_attacker -> country
 # Iterate through all attackers of a war
+
+any_defender -> country
+# Iterate through all defenders of a war
+
+any_war_participant -> country
+# Iterate through all participants of a war 
+
+#-----------------
+# Scope: Unit
+#-----------------
+any_sub_unit -> sub_unit
+# Iterate through all subunits in a unit 
+
+#-----------------
+# Scope: Siege
+#-----------------
+any_besieging_units -> unit
+# Iterate through all units participating in a siege 
 
 #-----------------
 # Scope: Combat Side
@@ -278,10 +807,109 @@ any_right_flank -> sub_unit
 # Iterate through all subunits on the right-flank of a combat-side 
 
 #-----------------
-# Scope: Siege
+# Scope: Mercenary
 #-----------------
-any_besieging_units -> unit
-# Iterate through all units participating in a siege 
+any_mercenary_sub_unit -> sub_unit
+# Iterate through all subunits in a Mercenary 
+
+#-----------------
+# Scope: Culture
+#-----------------
+any_country_in_culture -> country
+# Iterate through all countries with this primary culture 
+
+any_culture_group -> culture_group
+# Iterate through all culture groups the culture is in. 
+
+any_graphical_culture_in_culture -> graphical_culture
+# Iterate through all graphical culture in a culture 
+
+#-----------------
+# Scope: Culture Group
+#-----------------
+any_country_in_culture_group -> country
+# Iterate through all countries in a culture group. 
+
+any_culture_in_culture_group -> culture
+# Iterate through all cultures in a culture group. 
+
+any_culture_in_group -> culture
+# Iterate through all cultures in a culture group
+
+#-----------------
+# Scope: Demand
+#-----------------
+any_good_in_demand -> goods
+# Iterate through all goods in a goods demand
+
+#-----------------
+# Scope: Dynasty
+#-----------------
+any_character_in_dynasty -> character
+# Iterate through all living characters in a Dynasty 
+
+any_country_in_dynasty -> country
+# Iterate through all countries in a Dynasty 
+
+#-----------------
+# Scope: Estate
+#-----------------
+any_possible_privilege -> estate_privilege
+# Iterate through all possible & allowed estate privileges of a Country that is not currently implemeted 
+
+#-----------------
+# Scope: Religion Group
+#-----------------
+any_country_in_religion_group -> country
+# Iterate through all countries in a religion group. 
+
+any_religion_in_religion_group -> religion
+# Iterate through all religions in a religion group. 
+
+#-----------------
+# Scope: Religion
+#-----------------
+any_cardinal_in_religion -> cardinal
+# Iterate through all Cardinals in a Religion 
+
+any_country_in_religion -> country
+# Iterate through all countries in a religion 
+
+any_country_with_cardinals -> country
+# Iterate through all countries with cardinals in a religion 
+
+any_god_in_religion -> god
+# Iterate through all Gods in a Religion
+
+any_holy_site_in_religion -> holy_site
+# Iterate through all Holy Sites in a Religion 
+
+any_other_religion_in_same_group -> religion
+# Iterate through all other religions that has the same group as Religion
+
+any_religion_international_organization -> international_organization
+# Iterate through all international organisations of a religion 
+
+#-----------------
+# Scope: Religious Aspect
+#-----------------
+any_valid_religion_for_aspect -> religion
+# Iterate through all religion that an aspect can be for
+
+#-----------------
+# Scope: Religious School
+#-----------------
+any_country_in_religious_school -> country
+# Iterate through all countries within a school 
+
+#-----------------
+# Scope: God
+#-----------------
+any_avatar_for_god -> avatar
+# Iterate through all Avatars of a God 
+
+any_religion_for_god -> religion
+# Iterate through all Religions of a God 
 
 #-----------------
 # Scope: Heir Selection
@@ -290,16 +918,46 @@ any_allowed_estate_in_heir_selection -> estate_type
 # Iterate through all allowed estates a HeirSelection has 
 
 #-----------------
-# Scope: God
-#-----------------
-any_avatar_for_god -> avatar
-# Iterate through all Avatars of a God 
-
-#-----------------
 # Scope: International Organization
 #-----------------
 any_active_resolution -> active_resolution
 # Iterate through all currently active resolutions in an international organization or situation 
+
+any_possible_parliament_issue -> parliament_issue
+# Iterate through all possible parliament issues in a international organization's parliament 
+
+any_country_with_special_status_of_type -> country
+# Iterate through all countries in the international organization which have the specified special status 
+
+any_current_law_in_international_organization -> law
+# Iterate through all laws that are codified in the international organization 
+
+any_current_policy_in_international_organization -> policy
+# Iterate through all policies that are codified in the international organization 
+
+any_international_organization_elector -> country
+# Iterate through all countries with an elector special status in the international organization 
+
+any_international_organization_enemy -> country
+# Iterate through all countries that are enemies of the international organization 
+
+any_international_organization_member -> country
+# Iterate through all countries that are members of the international organization 
+
+any_international_organization_owned_location -> location
+# Iterate through all locations that are owned by the international organization 
+
+any_international_organization_parliament_opposers -> country
+# Iterate through all countries that have voted AGAINST the parliament issue in the in the parliament of the international organization and support the current debate 
+
+any_international_organization_parliament_supporter -> country
+# Iterate through all countries that have voted FOR the parliament issue in the parliament of the international organization and support the current debate 
+
+#-----------------
+# Scope: Law
+#----------------- 
+any_policy_in_law -> law
+# Iterate through all policies that are part of the law scope 
 
 #-----------------
 # Scope: Situation
@@ -312,3 +970,28 @@ any_active_resolution -> active_resolution
 #-----------------
 any_voter -> country
 # Iterate through all voters in an active resolution 
+
+#-----------------
+# Scope: Policy
+#-----------------
+any_estate_type_preferring -> estate_type
+#  	Iterate through all estate types that a prefer a policy 
+
+#-----------------
+# Scope: Production Method
+#-----------------
+any_required_goods -> goods
+# Iterate through all goods required by the scope production method.
+
+#-----------------
+# Scope: Rebels
+#-----------------
+any_character_supporting_rebel -> character
+# Iterate through all characters supporting a rebel 
+
+any_country_supporting_rebel -> country
+# Iterate through all countries supporting a rebel
+
+any_pops_supporting_rebel -> pop
+#  	Iterate through all pops supporting a rebel 
+
