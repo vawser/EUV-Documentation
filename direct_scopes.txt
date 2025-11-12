@@ -1,0 +1,12 @@
+In most cases, you can directly access a scope of an object by doing the following:
+
+<object id> = {
+
+}
+
+Object types that support this:
+ TODO
+ 
+For some, you need to prefix the ID, for example:
+
+c:FRA to access the country scope of France

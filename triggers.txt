@@ -9,79 +9,42 @@ Greater Than: >
 Greater Than or Equal: >=
 
 #-----------------------------------
-# Iterator Triggers
+# Flow Triggers
 #-----------------------------------
-All iterator triggers can use these parameters:
+Flow triggers are used to control how other triggers are executed.
 
-<list> = {
-    # Filters the list down to a sub-set based on the triggers (optional)
-    filter = {
-        <triggers>
-    }
+all_false = { 
+    <triggers> 
+}
+# true if all children are false (equivalent to NOR) 
+
+and = { 
+    <triggers> 
+}
+# all inside trigger must be true 
+
+any_false = { 
+    <triggers> 
+}
+# true if any child is false (equivalent to NAND) 
+
+calc_true_if = {
+    amount = <int>
     
-    # How many elements of this list to check
-    count = <int> / all
-    
-    # How much of the list in a percentage to check (optional)
-    percent = <float>
-    
-    # The triggers to check for elements in this list
     <triggers>
 }
+# Returns true if the specified number of sub-triggers return true 
 
-The -> indicates the inner scope the iterator targets.
+custom_description = {
+    text = <loc key>
+    subject = <scope> # optional
+    object = <scope> # optional
+    value = <script value> # optional
+    
+    <triggers>
+}
+# Wraps triggers that get a custom description instead of the auto-generated one 
 
-The following prefixes are valid:
-any_
-all_
-random_
-
-Only any_ prefixed entries are listed below for brevity.
-
-#-----------------
-# Scope: None
-#-----------------
-any_active_estate -> estate_type
-# Iterate through all active estates (non-crown) 
-
-any_area -> area
-# Iterate through all existing areas 
-
-#-----------------
-# Scope: Country
-#-----------------
-any_accepted_culture -> culture
-# Iterate through all accepted cultures in a country
-
-any_active_disaster -> disaster
-# Iterate through all active disasters for a country 
-
-#-----------------
-# Scope: International Organization
-#-----------------
-any_active_resolution -> active_resolution
-# Iterate through all currently active resolutions in an international organization or situation 
-
-#-----------------
-# Scope: Situation
-#----------------- 
-any_active_resolution -> active_resolution
-# Iterate through all currently active resolutions in an international organization or situation 
-
-#-----------------
-# Scope: Area
-#----------------- 
-any_adjacent_ports_to_area -> location
-# Iterate through all adjacent ports of an seazone area 
-
-#-----------------
-# Scope: Heir Selection
-#----------------- 
-any_allowed_estate_in_heir_selection -> estate_type
-# Iterate through all allowed estates a HeirSelection has 
-
-#-----------------
-# Scope: Character
-#-----------------
-any_ancestor -> character
-# Iterate through all ancestors (parents, grandparents etc) of a character 
+#-----------------------------------
+# Triggers
+#-----------------------------------
