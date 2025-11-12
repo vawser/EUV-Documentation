@@ -1,0 +1,9 @@
+#----------------------------------------------------------
+# Notes
+#----------------------------------------------------------
+Launch the Map Editor by adding -map_editor to the game launch parameters
+
+#----------------------------------------------------------
+# Overview
+#----------------------------------------------------------
+The heightmap is split into several discrete files that are co-ordinated in the Decal Editor.

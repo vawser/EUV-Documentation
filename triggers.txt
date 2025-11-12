@@ -1,0 +1,87 @@
+#-----------------------------------
+# Comparison Types
+#-----------------------------------
+Less Than: <
+Less Than or Equal: <=
+Equals: =
+Not Equals: !=
+Greater Than: >
+Greater Than or Equal: >=
+
+#-----------------------------------
+# Iterator Triggers
+#-----------------------------------
+All iterator triggers can use these parameters:
+
+<list> = {
+    # Filters the list down to a sub-set based on the triggers (optional)
+    filter = {
+        <triggers>
+    }
+    
+    # How many elements of this list to check
+    count = <int> / all
+    
+    # How much of the list in a percentage to check (optional)
+    percent = <float>
+    
+    # The triggers to check for elements in this list
+    <triggers>
+}
+
+The -> indicates the inner scope the iterator targets.
+
+The following prefixes are valid:
+any_
+all_
+random_
+
+Only any_ prefixed entries are listed below for brevity.
+
+#-----------------
+# Scope: None
+#-----------------
+any_active_estate -> estate_type
+# Iterate through all active estates (non-crown) 
+
+any_area -> area
+# Iterate through all existing areas 
+
+#-----------------
+# Scope: Country
+#-----------------
+any_accepted_culture -> culture
+# Iterate through all accepted cultures in a country
+
+any_active_disaster -> disaster
+# Iterate through all active disasters for a country 
+
+#-----------------
+# Scope: International Organization
+#-----------------
+any_active_resolution -> active_resolution
+# Iterate through all currently active resolutions in an international organization or situation 
+
+#-----------------
+# Scope: Situation
+#----------------- 
+any_active_resolution -> active_resolution
+# Iterate through all currently active resolutions in an international organization or situation 
+
+#-----------------
+# Scope: Area
+#----------------- 
+any_adjacent_ports_to_area -> location
+# Iterate through all adjacent ports of an seazone area 
+
+#-----------------
+# Scope: Heir Selection
+#----------------- 
+any_allowed_estate_in_heir_selection -> estate_type
+# Iterate through all allowed estates a HeirSelection has 
+
+#-----------------
+# Scope: Character
+#-----------------
+any_ancestor -> character
+# Iterate through all ancestors (parents, grandparents etc) of a character 

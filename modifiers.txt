@@ -1,0 +1,194 @@
+#-----------------------------------
+# Prices
+#-----------------------------------
+All _cost_modifier entries are dynamically generated from the entries in common/prices/
+
+<name>_cost_modifier = <float>
+
+The following entries cover the vanilla game, but mods can add new or remove entries.
+
+#-----------------------------------
+# Government
+#-----------------------------------
+change_heir_selection_cost_modifier  = <float>
+abdicate_price_cost_modifier = <float>
+
+remove_government_reform_cost_modifier = <float>
+
+set_cabine_action_cost_modifier = <float>
+set_cabinet_member_cost_modifier = <float>
+replace_cabinet_member_cost_modifier = <float>
+
+capital_movement_cost_modifier = <float>
+
+hire_advisor_cost_modifier = <float>
+hire_artist_cost_modifier = <float>
+
+invite_artist_cost_modifier = <float>
+
+#-----------------------------------
+# Parliament
+#-----------------------------------
+absentee_agenda_impact = <float>
+absentee_can_participate_in_parliament = <bool>
+absorb_institutions_cost_modifier = <float>
+
+change_parliament_type_cost_modifier = <float>
+change_organization_parliament_type_cost_modifier = <float>
+
+#-----------------------------------
+# Institutions
+#-----------------------------------
+embrace_institution_cost_modifier = <float>
+
+#-----------------------------------
+# Technology
+#-----------------------------------
+
+#-----------------------------------
+# Policy
+#-----------------------------------
+set_policy_cost_modifier = <float>
+change_policy_cost_modifier = <float>
+policy_vote_cost_modifier = <float>
+
+#-----------------------------------
+# Estates
+#-----------------------------------
+grant_privilege_cost_modifier = <float>
+revoke_privilege_cost_modifier = <float>
+
+#-----------------------------------
+# Economy
+#-----------------------------------
+create_market_cost_modifier = <float>
+relocate_market_cost_modifier = <float>
+destroy_market_cost_modifier = <float>
+
+#-----------------------------------
+# Pops
+#-----------------------------------
+
+#-----------------------------------
+# Road
+#-----------------------------------
+build_gravel_road_cost_modifier  = <float>
+build_paved_road_cost_modifier  = <float>
+build_modern_road_cost_modifier  = <float>
+build_railroad_cost_modifier  = <float>
+
+#-----------------------------------
+# Resources
+#-----------------------------------
+change_employment_system_cost_modifier  = <float>
+
+expand_rgo_mining_cost_modifier  = <float>
+expand_rgo_farming_cost_modifier  = <float>
+expand_rgo_hunting_cost_modifier  = <float>
+expand_rgo_gathering_cost_modifier  = <float>
+expand_rgo_forestry_cost_modifier  = <float>
+
+#-----------------------------------
+# Diplomacy
+#-----------------------------------
+send_gift_cost_modifier  = <float>
+accept_subjugation_reasons = <int>
+
+buy_military_access_cost_modifier  = <float>
+buy_fleet_basing_rights_cost_modifier  = <float>
+
+replace_rival_cost_modifier  = <float>
+
+#-----------------------------------
+# War
+#-----------------------------------
+declaring_war_cost_modifier  = <float>
+honoring_alliance_call_cost_modifier  = <float>
+
+war_breaking_truce_cost_modifier  = <float>
+war_breaking_truce_with_guarantor_cost_modifier  = <float>
+war_great_relations_cost_modifier  = <float>
+war_good_relations_cost_modifier  = <float>
+war_when_military_acces_cost_modifier  = <float>
+
+war_no_cb_cost_modifier  = <float>
+war_on_subject_cost_modifier  = <float>
+war_on_same_religion_cb_cost_modifier  = <float>
+war_on_same_religion_no_cb_cost_modifier  = <float>
+war_on_different_religion_cost_modifier  = <float>
+
+#-----------------------------------
+# Colonial
+#-----------------------------------
+recruit_explorer_cost_modifier = <float>
+
+create_colonial_charter_cost_modifier = <float>
+abandon_colonial_charter_cost_modifier = <float>
+
+#-----------------------------------
+# Religion
+#-----------------------------------
+convert_religion_cost_modifier = <float>
+
+change_liturgical_language_cost_modifier = <float>
+
+invite_religious_figure_same_school_cost_modifier = <float>
+invite_religious_figure_different_school_cost_modifier = <float>
+dismiss_religious_figure_cost_modifier = <float>
+
+propose_curia_action_cost_modifier = <float>
+change_curia_vote_cost_modifier = <float>
+
+orthodox_synod_cost_modifier = <float>
+periphora_cost_modifier = <float>
+canonize_cost_modifier = <float>
+
+#-----------------------------------
+# Culture
+#-----------------------------------
+change_court_language_cost_modifier = <float>
+
+add_accepted_culture_cost_modifier = <float>
+remove_accepted_culture_cost_modifier = <float>
+add_tolerated_culture_cost_modifier = <float>
+remove_tolerated_culture_cost_modifier = <float>
+change_primary_culture_cost_modifier = <float>
+
+#-----------------------------------
+# Military
+#-----------------------------------
+train_general_cost_modifier = <float>
+
+create_supply_depot_cost_modifier = <float>
+
+#-----------------------------------
+# Naval
+#-----------------------------------
+train_admiral_cost_modifier = <float>
+
+abandon_piracy_cost_modifier = <float>
+
+#-----------------------------------
+# Mercenary
+#-----------------------------------
+hire_mercenary_leader_cost_modifier  = <float>
+hire_mercenary_premium_cost_modifier  = <float>
+
+#-----------------------------------
+# Unit
+#-----------------------------------
+empty_unit_maintenance_cost_modifier  = <float>
+
+bribe_units_cost_modifier  = <float>
+hire_prisoners_cost_modifier  = <float>
+ransom_units_cost_modifier  = <float>
+
+#-----------------------------------
+# Unit Types
+#-----------------------------------
+a_clan_retainer_cavalry_build_cost_modifier = <float>
+a_clan_retainer_cavalry_maintenance_cost_modifier = <float>
+a_clan_retainer_cavalry_reinforce_cost_modifier = <float>
+a_clan_retainers_build_cost_modifier = <float>
+a_clan_retainers_maintenance_cost_modifier = <float>
+a_clan_retainers_reinforce_cost_modifier = <float>
