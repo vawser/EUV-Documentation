@@ -732,6 +732,188 @@ remove_static_modifier_utility = {
 has_country_modifier = <key>
 # Checks if the scoped country have a given modifier 
 
+active_religious_focus = <key>
+# Checks if a country is researching a certain religious focus 
+
+age_preference = <key>
+# Checks a countries age preference for current age 
+
+ai_unlock_unit_score = <int>
+# Checks the score for AI to unlock a unit 
+
+allows_female_rulers = <bool>
+# Checks if a country allows female rulers 
+
+allows_male_rulers = <bool>
+# Checks if a country allows male rulers 
+
+army_maintenance = <float>
+# Checks the current army maintenance for the country
+
+army_size = <int>
+# Checks if a country has a certain army size
+
+army_size_percentage = <float>
+# Checks if a country has a certain percentage of regiments compared to expected size 
+
+army_tradition = <int>
+# Checks the army tradition a country has.
+
+army_tradition_percentage = <float>
+# Checks the army tradition as a percentage a country has.
+
+at_war = <bool>
+# Checks if a country is at war 
+
+average_control_in_home_region = <float>
+# Checks the average control in the home region 
+
+average_country_literacy = <float>
+# Checks if a country has a certain average_literacy
+
+building_type_is_obsolete = <building_type>
+# Checks if the specified building type is obsolete for the scope country. 
+
+can_build_building = <building_type>
+# Checks if the location/country can build the specified building. Location only checks local requirements, country checks the country scope requirements. 
+
+can_build_unit_type = <unit_type>
+# Checks if the country can build the specified unit type. 
+
+can_build_units_of_category = <sub_unit_category>
+# Checks if the country can build units of the specified category.
+
+can_declare_no_cb_war_on = <country>
+# Can the country declare a war without any casus belli on the target country? 
+
+can_declare_war_on = <country>
+# Check if the current country could declare war on the target country 
+
+can_form = <formable_country>
+# Checks if the country can form the specified formable country.
+
+can_join_defensive_war_with = <country>
+# Can the country join in a defensive war with the scope country? 
+
+can_join_international_organization = <international_organization>
+# Can we join the supplied international organization? 
+
+can_join_offensive_war_with  = <country>
+# Can the country join in an offensive war with the scope country? 
+
+can_lead_international_organization = <international_organization>
+# Can the country lead the specified international organization? 
+
+can_leave_international_organization = <international_organization>
+# Can we leave the supplied international organization? 
+
+can_pay_price = <price>
+# Can the country pay the specified price? 
+
+can_raise_army_levies = <bool>
+# Checks if the country can raise army levies 
+
+can_raise_levies = <bool>
+# Checks if the country can raise any kind of levies 
+
+can_raise_navy_levies = <bool>
+# Checks if the country can raise navy levies 
+
+can_research_advance  = <key>
+# Checks if a country can research but has not yet researched a specific advance.
+
+can_see_religious_aspect = <religious_aspect>
+# Checks if the input religious aspect is visible for the country in scope. 
+
+can_see_situation = <situation>
+# Checks if the 'visible' trigger of the target situation is fulfilled for the country scope. 
+
+can_share_maps_with = <country>
+# Country can share maps with the supplied country?
+
+can_use_agenda_bribe = <key>
+# Checks if estate type is allowed in parliament 
+
+can_vote_in_parliament = <international_organization>
+# Can the countrs scope vote in the target international organization? 
+
+cancel_exploration_utility = {
+    area = <area>
+    value = <threshold>
+}
+# Utility of an cancelling and exploration to the country 
+# cancel_exploration_utility(<area>)
+
+can_make_subject_of = {
+    target = <country>
+    type = <key>
+    
+    ignore_war_limitation = yes # optional: ignore allowed_subjugation of the war
+}
+# Can the country in scope become a subject of the target country ? Same checks as the peace treaty become-subject. 
+
+can_find_trade_route = {
+    from = <market>
+    to = <market>
+}
+# can the country find a trade route from market a to market b? 
+
+can_do_generic_action = {
+    generic_action = <action>
+    
+    # Optional
+    recipient = <scope>
+    target_location = <scope>
+} 
+# Is the country capable of doing the specified generic action right now? 
+
+can_create_casus_belli_of_type_on = {
+    type = <key>
+    target = <country>
+}
+# Can the country see and create a cb of the supplied type on the target? 
+
+border_distance_to = {
+    country = <country>
+    value = <float>
+}
+# Gets distance between borders of two nations or a location and a nation. 
+# border_distance_to(country)
+
+antagonism = {
+    target = <country>
+    
+    # Primary form
+    value = <int>
+    
+    # Secondary form
+    value  = {
+        <min> 
+        <max>
+    }
+}
+# Check if the country's antagonism towards the target greater or equal than the value?
+
+annexation_cost = {
+    target = <country>
+    value = <script_value>
+}
+# How much does the target country cost for the current country to annex?
+# annexation_cost(<target country>)
+
+add_estate_satisfaction_utility = {
+    type = <estate_type>
+    amount = <float>
+    value = <threshold>
+}
+# Utility of adding however much estate satisfaction to the country 
+# add_estate_satisfaction_utility(<estate>|<amount>)
+
+add_static_modifier_utility = {
+    modifier = <key>
+    value = <script_value>
+}
+# Checks the AI utility of adding a static modifier to the scoped object 
 
 #-----------------
 # Scope: Culture
