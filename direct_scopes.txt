@@ -10,3 +10,6 @@ Object types that support this:
 For some, you need to prefix the ID, for example:
 
 c:FRA to access the country scope of France
+
+modifier:<name>
+religion:<name>
