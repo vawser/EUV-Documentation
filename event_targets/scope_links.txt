@@ -1,0 +1,159 @@
+#--------------------------------------------------------------------------------
+# Scope Links
+#--------------------------------------------------------------------------------
+These are basic scope switches. -> points to the new scope.
+
+#----------------------
+# Scope: None
+#----------------------
+c -> country
+# Scope to the specified country TAG 	 
+
+#----------------------
+# Scope: Building
+#----------------------
+building_type -> building_type
+# Scope to the building type object for this building
+
+location -> location
+# Scope to the location for this building
+
+owner -> country
+# Scope to the owner country for this building
+
+#----------------------
+# Scope: Character
+#----------------------
+birth_location 	Unknown, add something in code registration 	location
+cabinet_action 	The cabinet action a character is performing 	cabinet_action
+dynasty 	Unknown, add something in code registration 	dynasty
+employer 	Employer of the character 	country
+ethnicity 	Unknown, add something in code registration 	ethnicity
+exploration 	Unknown, add something in code registration 	exploration
+father 	Unknown, add something in code registration 	character
+first_spouse 	Unknown, add something in code registration 	character
+location 	Unknown, add something in code registration 	location
+modifier 	Scope to the value of the modifier type of specified key belonging to the current object 	boolean, value
+mother 	Unknown, add something in code registration 	character
+owner 	Unknown, add something in code registration 	country
+rebel 	Unknown, add something in code registration 	rebels
+religious_school 	Unknown, add something in code registration 	religious_school
+rule_end_date 	Unknown, add something in code registration 	date
+unit 	Unknown, add something in code registration 	unit 
+
+#----------------------
+# Scope: Country
+#----------------------
+active_mission 	Unknown, add something in code registration 	mission
+autocephalous_patriarchate 	Unknown, add something in code registration 	international_organization
+capital 	Unknown, add something in code registration 	location
+civil_war 	Unknown, add something in code registration 	war
+civil_war_opponent 	Unknown, add something in code registration 	country
+consort 	Unknown, add something in code registration 	character
+country_color 	Unknown, add something in code registration 	color
+country_rank_on_date 	Unknown, add something in code registration 	country_rank
+country_stance 	Unknown, add something in code registration 	military_stance
+court_dialect 	Unknown, add something in code registration 	dialect
+court_language 	Unknown, add something in code registration 	language
+current_mission_task 	Unknown, add something in code registration 	mission_task
+dominant_culture 	Unknown, add something in code registration 	culture
+dominant_dialect 	Unknown, add something in code registration 	dialect
+dominant_language 	Unknown, add something in code registration 	language
+dominant_religion 	Unknown, add something in code registration 	religion
+dominant_upper_class_culture 	Unknown, add something in code registration 	culture
+estate 	Links to a particular estate. Usage: estate:<estate_type_link> or estate(<estate_type_link>) 	estate
+estate_power 	The power of an estate 	value
+estate_satisfaction 	The satisfaction of an estate 	value
+estate_target_satisfaction 	The target satisfaction of an estate 	value
+estate_tax_percentage 	The tax percentage levied on an estate 	value
+heir 	Unknown, add something in code registration 	character
+known_in_country 	The amount of goods known to a specific Country 	value
+last_valid_ruler 	Unknown, add something in code registration 	character
+law_policy 	gets the policy chosen for a particular law in the scope international organization or country - usage law_policy(<law>) 	policy
+liturgical_dialect 	Unknown, add something in code registration 	dialect
+liturgical_language 	Unknown, add something in code registration 	language
+low_control_best_tax_base 	get the best low control tax base 	province
+marriage_union 	Unknown, add something in code registration 	international_organization
+modifier 	Scope to the value of the modifier type of specified key belonging to the current object 	boolean, value
+num_estate_privileges 	The amount of privileges an estate has 	value
+num_location_rank 	Count the amount of owned locations of a specific rank 	value
+num_pop_type_in_country 	The amount of pops of a specific type in a country 	value
+num_possible_estate_privileges 	The amount of possible privileges an estate can get 	value
+overlord 	Unknown, add something in code registration 	country
+parliament_seat 	Unknown, add something in code registration 	location
+percentage_pop_type_in_country 	The percentage of pops of a specific type in a country 	value
+previous_ruler 	Unknown, add something in code registration 	character
+produced_in_country 	The amount of goods produced in a speficic Country 	value
+regent 	Unknown, add something in code registration 	character
+religious_school 	Unknown, add something in code registration 	religious_school
+ruler 	Unknown, add something in code registration 	character
+ruler_or_heir_if_regent 	Unknown, add something in code registration 	character
+ruler_or_regent 	Unknown, add something in code registration 	character
+societal_value 	The value of a societal value of a country 	value
+succession_law 	Unknown, add something in code registration 	heir_selection
+top_overlord 	Unknown, add something in code registration 	country
+top_overlord_or_this 	Unknown, add something in code registration 	country
+total_effective_building_levels 	The amount of total effective building levels in a speficic Country 	value
+total_sub_unit_count 	Checks the amount of a subunit-category that a country has (in regiments/ships) 	value
+total_sub_unit_strength 	Checks the total strength of a subunit-category for a unit 	value
+total_sub_unit_type_count 	Checks the amount of a subunit-type that a country has (in regiments/ships) 	value
+union 	Unknown, add something in code registration 	international_organization
+war_with_country 	Gets the current war of the country scope against the specified target country - usage war_with_country(<country>) 	war 
+
+#----------------------
+# Scope: Location
+#----------------------
+active_outbreak 	gets the active outbreak for a disease in a location or subunit - usage active_outbreak(<disease>) 	disease_outbreak
+building 	Unknown, add something in code registration 	building
+cardinal 	Unknown, add something in code registration 	cardinal
+combat 	Unknown, add something in code registration 	combat
+controller 	Unknown, add something in code registration 	country
+dominant_culture 	Unknown, add something in code registration 	culture
+dominant_dialect 	Unknown, add something in code registration 	dialect
+dominant_language 	Unknown, add something in code registration 	language
+dominant_religion 	Unknown, add something in code registration 	religion
+institution_progress 	The progress towards an institution of a location 	value
+last_dynasty_in_location 	Unknown, add something in code registration 	dynasty
+market 	Unknown, add something in code registration 	market
+modifier 	Scope to the value of the modifier type of specified key belonging to the current object 	boolean, value
+num_pop_type 	The amount of pops of a specific type at location 	value
+owner 	Unknown, add something in code registration 	country
+percentage_pop_type_in_location 	The percentage of pops of a specific type in a location 	value
+previous_owner 	Unknown, add something in code registration 	country
+province 	Unknown, add something in code registration 	province
+province_definition 	Unknown, add something in code registration 	province_definition
+raw_material 	Unknown, add something in code registration 	goods
+raw_material_location 	Unknown, add something in code registration 	goods
+region 	Unknown, add something in code registration 	region
+sea_zone 	Unknown, add something in code registration 	location
+second_best_market 	Unknown, add something in code registration 	market
+secondary_culture 	Unknown, add something in code registration 	culture
+secondary_otherwise_primary_culture 	Unknown, add something in code registration 	culture
+siege 	Unknown, add something in code registration 	siege
+top_owner 	Unknown, add something in code registration 	country 
+
+#----------------------
+# Scope: Market
+#----------------------
+location 	Unknown, add something in code registration 	location
+market_price 	The price a goods has in a market 	value
+most_powerful_merchant 	Unknown, add something in code registration 	country
+owner 	Unknown, add something in code registration 	country
+produced_in_market 	The amount of goods produced in a speficic market 	value
+stockpile_in_market 	The amount of goods stockpiled in a specific market 	value
+target_price 	The target price a goods has in a market 	value
+traded_in_market 	The amount of goods traded in a specific market 	value 
+
+#----------------------
+# Scope: Pop
+#----------------------
+location 	Unknown, add something in code registration 	location
+owner 	Unknown, add something in code registration 	country
+pop_type 	Unknown, add something in code registration 	pop_type
+rebel 	Unknown, add something in code registration 	rebels 
+
+#----------------------
+# Scope: War
+#----------------------
+attacker_leader 	Unknown, add something in code registration 	country
+defender_leader 	Unknown, add something in code registration 	country

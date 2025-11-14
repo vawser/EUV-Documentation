@@ -1,0 +1,317 @@
+
+#--------------------------------------------------------------------------------
+# Contextual Data Links
+#--------------------------------------------------------------------------------
+These allow you to scope to a 'data' block from the listed FROM scope.
+
+A basic example of usage is to access a object:
+    research_advance = advance_type:guilds
+
+Without the advance_type: data link, which object the guilds refers to is ambiguous.
+
+#----------------------
+# Scope: None
+#----------------------
+advance_type
+# Scope to an Advance object
+
+age
+# Scope to an Age object
+
+area
+# Scope to a Area object
+
+artist_type
+# Scope to an Artist Type object
+
+casus_belli
+# Scope to a Casus Belli object
+
+character
+# Scope to a Character object
+
+character_interaction
+# Scope to a Character Interaction object
+
+child_education
+# Scope to a Child Education object
+
+climate
+# Scope to a Climate object
+
+continent
+# Scope to a Continent object
+
+country_interaction
+# Scope to a Country Interaction object
+
+country_rank
+# Scope to a Country Rank object
+
+culture
+# Scope to a Culture object
+
+culture_group
+# Scope to a Culture Group object
+
+demand
+# Scope to a Demand object
+
+dialect
+# Scope to a Dialect object
+
+disaster_type
+# Scope to a Disaster Type object
+
+employment_system
+# Scope to an Employment System object
+
+estate_privilege
+# Scope to an Estate Privilege object
+
+estate_type
+# Scope to an Estate Type object
+
+flag
+# Scope to a Flag literal
+
+formable_country
+# Scope to a Formable Country object
+
+generic_action
+# Scope to a Generic Action object
+
+goods
+# Scope to a Goods object
+
+government_reform
+# Scope to a Government Reform object
+
+government_type
+# Scope to a Government Type object
+
+hegemony
+# Scope to a Hegemony object
+
+heir_selection
+# Scope to a Heir Selection object
+
+holy_site_definition
+# Scope to a Holy Site Definition object
+
+holy_site_type
+# Scope to a Holy Site Type object
+
+institution
+# Scope to a Institution object
+
+international_organization
+# Scope to a International Organization object
+
+language
+# Scope to a Language object
+
+language_family
+# Scope to a Language Family object
+
+law
+# Scope to a Law object
+
+levy_setup
+# Scope to a Levy Setup object
+
+location_rank
+# Scope to a Location Rank object
+
+mission
+# Scope to a Mission object
+
+mission_task
+# Scope to a Mission Task object
+
+parliament_agenda
+# Scope to a Parliament Agenda object
+
+parliament_issue
+# Scope to a Parliament Issue object
+
+parliament_type
+# Scope to a Parliament Type object
+
+payment
+# Scope to a Payment object
+
+peace_treaty
+# Scope to a Peace Treaty object
+
+policy
+# Scope to a Policy object
+
+price
+# Scope to a Price object
+
+production_method
+# Scope to a Production Method object
+
+recruitment_method
+# Scope to a Recruitment Method object
+
+regency_type
+# Scope to a Regency Type object
+
+relation_type
+# Scope to a Relation Type object
+
+religion
+# Scope to a Religion object
+
+religion_group
+# Scope to a Religion Group object
+
+religious_aspect
+# Scope to a Religious Aspect object
+
+religious_faction
+# Scope to a Religious Faction object
+
+religious_figure
+# Scope to a Religious Figure object
+
+religious_focus
+# Scope to a Religious Focus object
+
+resolution
+# Scope to a Resolution object
+
+road_type
+# Scope to a Road Type object
+
+scriptable_hint_definition
+# Scope to a Scriptable Hint Definition object
+
+situation
+# Scope to a Situation object
+
+societal_value_type
+# Scope to a Societal Value Type object
+
+special_status
+# Scope to a Special Status object
+
+sub_continent
+# Scope to a Sub-Continent object
+
+sub_unit_category
+# Scope to a Sub-Unit Category object
+
+subject_military_stance
+# Scope to a Subject Military Stance object
+
+subject_type
+# Scope to a Subject Type object
+
+topography
+# Scope to a Topography object
+
+trait
+# Scope to a Trait object
+
+unit_ability
+# Scope to a Unit Ability object
+
+unit_type
+# Scope to a Unit Type object
+
+var
+# Scope to a previously defined variable
+
+vegetation
+# Scope to a Vegetation object
+
+work_of_art
+# Scope to a Work of Art object
+
+#----------------------
+# Scope: Active Resolution
+#----------------------
+cast_vote_in_active_resolution 
+# Gets the cast vote in a resolution, returns nothing if the vote isn't explicit
+# Usage: cast_vote_in_resolution(<country>) 
+
+resolution_target
+# Links to the named parameter (from the select_triggers) in the scope active resolution 
+
+vote_in_active_resolution 
+# Gets the active resolution of the type specified in the scope active resolution 
+# Usage: vote_in_resolution(<country>) 
+
+#----------------------
+# Scope: Area
+#----------------------
+area_exploration
+# Links to an exploration in the scope area for the suppled country.
+# Usage: area_exploration:<country> or area_exploration(<country>) 
+
+#----------------------
+# Scope: Cabinet
+#----------------------
+interaction_target
+# ?
+
+#----------------------
+# Scope: Character
+#----------------------
+rule_end_date 
+# ?
+
+#----------------------
+# Scope: Country
+#----------------------
+country_rank_on_date
+# ?
+
+estate
+# Links to a particular estate. 
+# Usage: estate:<estate_type_link> or estate(<estate_type_link>) 
+
+war_with_country
+# Gets the current war of the country scope against the specified target country 
+# Usage: war_with_country(<country>) 
+
+law_policy
+# Gets the policy chosen for a particular law in the scope international organization or country 
+# Usage: law_policy(<law>) 
+
+#----------------------
+# Scope: International Organization
+#----------------------
+law_policy
+# Gets the policy chosen for a particular law in the scope international organization or country 
+# Usage: law_policy(<law>) 
+
+leader_at_index
+# Scopes to the leader characters of the IO which are defined in leader = {}.
+# In case of countries instead, their ruler, heir or regent (in that order) gets returned instead. 
+# Usage: leader_at_index(<int>) 
+
+active_resolution
+# Gets the active resolution of the type specified in the scope international organization or situation - 
+# Usage: active_resolution(<resolution>) 
+
+#----------------------
+# Situation
+#----------------------
+active_resolution
+# Gets the active resolution of the type specified in the scope international organization or situation - 
+# Usage: active_resolution(<resolution>) 
+
+#----------------------
+# Scope: Location
+#----------------------
+building
+# Scope to the building scope for this location
+
+active_outbreak
+# Gets the active outbreak for a disease in a location or subunit 
+# Usage: active_outbreak(<disease>) 
+

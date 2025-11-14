@@ -1,0 +1,184 @@
+#--------------------------------------------------------------------------------
+# Value Links
+#--------------------------------------------------------------------------------
+These event targets are used for checking the value of X against Y.
+
+#----------------------
+# Scope: None
+#----------------------
+define
+# Name 	
+
+compare_complex_value
+# A comparison trigger that needs a parsable string parameter that will return its value in the context it is used eg: scope:root.number_of(armies) 	
+
+compare_value
+# A comparison trigger that will return its value in the context it is used eg: root.gold
+ 	
+named_script_value
+# A script value that will calculate and returns its value in the context it is used 	
+
+value
+# A numeric literal value eg: 1, 5.2, -6 	
+
+array_define
+# Name|Index. Index is 0-based. 
+	
+bias_value
+# ?
+
+default_price
+# The default price for a goods 	
+
+max_great_powers
+# ?
+
+produced_in_world
+# The amount of goods produced in the world 	
+
+#----------------------
+# Scope: Building Type
+#----------------------
+building_base_cost_in_gold
+# The Building base price in gold 
+	
+#----------------------
+# Scope: Character
+#----------------------
+modifier
+# Scope to the value of the modifier type of specified key belonging to the current object
+
+#----------------------
+# Scope: Country
+#----------------------
+modifier
+# Scope to the value of the modifier type of specified key belonging to the current object
+
+estate_power
+# The power of an estate 	
+
+estate_satisfaction
+# The satisfaction of an estate 
+	
+estate_target_satisfaction
+# The target satisfaction of an estate 	
+
+estate_tax_percentage
+# The tax percentage levied on an estate 	
+
+known_in_country
+# The amount of goods known to a specific Country 	
+
+num_estate_privileges
+# The amount of privileges an estate has 	
+
+num_location_rank
+# Count the amount of owned locations of a specific rank 	
+
+num_pop_type_in_country
+# The amount of pops of a specific type in a country 	
+
+num_possible_estate_privileges
+# The amount of possible privileges an estate can get 	
+
+percentage_pop_type_in_country
+# The percentage of pops of a specific type in a country 	
+
+produced_in_country
+# The amount of goods produced in a speficic Country 	
+
+societal_value
+# The value of a societal value of a country 	
+
+total_effective_building_levels
+# The amount of total effective building levels in a speficic Country 
+	
+total_sub_unit_count
+# Checks the amount of a subunit-category that a country has (in regiments/ships) 	
+
+total_sub_unit_strength
+# Checks the total strength of a subunit-category for a unit 
+	
+total_sub_unit_type_count
+# Checks the amount of a subunit-type that a country has (in regiments/ships) 	
+
+#----------------------
+# Scope: Estate
+#----------------------
+estate_tax_base : estate
+# the tax base of an estate 	
+
+#----------------------
+# Scope: International Organization
+#----------------------
+modifier
+# Scope to the value of the modifier type of specified key belonging to the current object
+
+#----------------------
+# Scope: Market
+#----------------------
+market_price
+# The price a goods has in a market 
+	
+produced_in_market
+# The amount of goods produced in a speficic market 	
+
+stockpile_in_market
+# The amount of goods stockpiled in a specific market 	
+
+target_price
+# The target price a goods has in a market 	
+
+traded_in_market
+# The amount of goods traded in a specific market
+
+#----------------------
+# Scope: Location
+#----------------------
+modifier
+# Scope to the value of the modifier type of specified key belonging to the current object
+
+institution_progress
+# The progress towards an institution of a location 	
+
+num_pop_type
+# The amount of pops of a specific type at location 	
+
+percentage_pop_type_in_location
+# The percentage of pops of a specific type in a location 	
+
+#----------------------
+# Scope: Province
+#----------------------
+modifier
+# Scope to the value of the modifier type of specified key belonging to the current object
+
+num_pop_type_in_province
+# The amount of pops of a specific type at Province 	
+
+#----------------------
+# Scope: Religion
+#----------------------
+modifier
+# Scope to the value of the modifier type of specified key belonging to the current object
+
+#----------------------
+# Scope: Unit
+#----------------------
+modifier
+# Scope to the value of the modifier type of specified key belonging to the current object
+
+sub_unit_count
+# Checks the amount of a subunit-type inside a unit (in regiments) 	
+
+sub_unit_fraction
+# Checks the fraction of a subunit-type inside a unit (in regiments) 	
+
+sub_unit_strength
+# Checks the strength of a subunit-type inside a unit (in regiments) 	
+
+total_sub_unit_category_in_unit
+# Checks the total strength of a subunit-category for a unit 	
+
+total_sub_unit_type_strength
+# Checks the total strength of a subunit-type for a country

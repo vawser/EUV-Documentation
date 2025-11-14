@@ -1,0 +1,42 @@
+#--------------------------------------------------------------------------------
+# Event Targets
+#--------------------------------------------------------------------------------
+# Effect example:
+The standard syntax for accessing the combat scope of the capital of France:
+
+c:FRA = {
+    capital = {
+        combat = {
+            
+        }
+    }
+}
+
+It can be accessed like so with dot notation:
+
+c:FRA.capital.combat = {
+    
+}
+
+# Trigger example:
+The standard syntax for checking if the market the capital of France belongs to is producing 10 Fish or more:
+
+if = {
+    limit = {
+        c:FRA = {
+            capital = {
+                market = {
+                    produced_in_market:fish > 10
+                }
+            }
+        }
+    }
+}
+
+It can be accessed like so with dot notation:
+
+if = {
+    limit = {
+        c:FRA.capital.market.produced_in_market:fish > 10
+    }
+}

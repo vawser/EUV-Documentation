@@ -24,9 +24,9 @@ Can be used as such:
 
 num_of_trait_by_category(<trait_category>) = <value>
 
-#-----------------
+#--------------------------------------------------------------------------------
 # Scope: None
-#-----------------
+#--------------------------------------------------------------------------------
 # ----- Flow -----
 Flow triggers are used to control how other triggers are executed.
 
