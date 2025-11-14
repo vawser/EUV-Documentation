@@ -777,27 +777,6 @@ great_power_ranking = <value>
 great_power_score = <value>
 # Checks if a country has a certain Great Power Score 
 
-country_highest_rated_special_status_power  = {
-    international_organization = <key>
-    value = <float>
-}
-# Get the political power of the country within the target international organization of its highest prioritized special status. 
-# highest_rated_special_status_power(<IO>)
-
-country_combined_special_status_power  = {
-    international_organization = <key>
-    value = <float>
-}
-# Get the political power of the country within the target international organization with all of its special statuses combined. 
-# country_combined_special_status_power(<IO>)
-
-country_combined_special_status_power_fraction = {
-    international_organization = <key>
-    value = <float>
-}
-# Get the political power fraction of the country within the target international organization with all of its special statuses combined.
-# country_combined_special_status_power(<IO>)
-
 # ----- Governance -----
 country_rank_level = <value>
 # level of the country rank of a country 	
@@ -821,9 +800,18 @@ average_control_in_home_region = <value>
 has_core = <location>
 # Does the country has a core of a specific location? 
 
-# ----- Demographics -----
+# ----- Pops -----
 average_country_literacy = <value>
 # Checks if a country has a certain average_literacy
+
+building_type_is_obsolete = <building_type>
+# Checks if the specified building type is obsolete for the scope country. 
+
+can_build_building = <building_type>
+# Checks if the location/country can build the specified building. Location only checks local requirements, country checks the country scope requirements. 
+
+has_employment_system = <key>
+# Does the country has the supplied employment system? 
 
 # ----- Court -----
 country_art_quality = <value>
@@ -860,6 +848,9 @@ estate_type_allowed_in_command = <key>
 
 estate_type_allowed_in_parliament = <key>
 # Checks if estate type is allowed in parliament 
+
+has_estate_privilege = <key>
+# Checks if a country has a certain estate privilege
 
 estate_satisfaction = {
     estate_type = <key>
@@ -909,6 +900,9 @@ has_advance_for_employment_system = <key>
 
 has_advance_for_succession_law = <key>
 # Does the country have the necessary advance to be able to adopt the supplied succession law? 
+
+has_embraced_institution = <key>
+#  	Checks if a country has embraced an institution 
 
 # ----- Economy -----
 country_tax_base = <value>
@@ -1046,6 +1040,18 @@ has_countries_with_near_coalition_grade_antagonism = <bool>
 has_countries_with_timed_antagonism = <bool>
 # Country has temporary antagonism towards them from other countries 
 
+has_gifted_gold_to = <country>
+# Has the country an active gold gift cooldown with the target country? 
+
+has_historical_rival = <country>
+# Does the scope country have the specified country as an historical rival? 
+
+has_historical_rivals = <bool>
+# Does the scope country have historical rivals? 
+
+has_insulted = <country>
+# Has the country an active insult cooldown with the target country? 
+
 giving_scripted_relation = {
     target = <country>
     type = <key>
@@ -1134,12 +1140,11 @@ has_casus_belli_of_type_on = {
 }
 # Does the country have a cb of the supplied type on the target? 
 
-# ----- Construction -----
-building_type_is_obsolete = <building_type>
-# Checks if the specified building type is obsolete for the scope country. 
-
-can_build_building = <building_type>
-# Checks if the location/country can build the specified building. Location only checks local requirements, country checks the country scope requirements. 
+has_diplomacy_with = {
+    country = <country>
+    type = <type>
+}
+# Does the country have a certain type of diplomatic relation with another. 
 
 # ----- Dynasty -----
 allows_female_rulers = <bool>
@@ -1153,6 +1158,9 @@ current_ruler_term_years = <value>
 
 has_consort = <bool>
 # country has a Consort 
+
+has_heir = <bool>
+# country has a Heir 	
 
 dynastic_power = {
     international_organization = <key>
@@ -1216,6 +1224,9 @@ harmony_percentage = <value>
 
 has_avatar = <key>
 # checks if a country has a particular avatar 
+
+has_invited_religious_figure = <bool>
+# country has invited religious figures to work with them 
 
 # ----- Military -----
 ai_unlock_unit_score = <value>
@@ -1288,6 +1299,15 @@ has_colonial_charters = <bool>
 has_colonial_claim = <province_definition>
 # country has a claim on a province definition? 
 
+has_discovered = <location>
+# Has the country discovered a specific location? 
+
+has_discovered_area = <area>
+# Has the country fully discovered the area? 
+
+has_exploration = <bool>
+# character/country is currently exploring 
+
 exploration_utility = {
     area = <area>
     character = <character>
@@ -1325,6 +1345,9 @@ cancel_exploration_utility = {
 # cancel_exploration_utility(<area>)
 
 # ----- Internal Organization -----
+has_international_organization_modifier = <key>
+# Does the scoped international organization have a given modifier 
+
 can_join_international_organization = <international_organization>
 # Can we join the supplied international organization? 
 
@@ -1336,6 +1359,30 @@ can_leave_international_organization = <international_organization>
 
 country_can_join_international_organization = <international_organization>
 # Can we add a country to the supplied international organization? 
+
+has_highest_rated_special_status_in_international_organization_of_type  = <key>
+# Does the country have the specified special status as its highest ranking? 
+
+country_highest_rated_special_status_power  = {
+    international_organization = <key>
+    value = <float>
+}
+# Get the political power of the country within the target international organization of its highest prioritized special status. 
+# highest_rated_special_status_power(<IO>)
+
+country_combined_special_status_power  = {
+    international_organization = <key>
+    value = <float>
+}
+# Get the political power of the country within the target international organization with all of its special statuses combined. 
+# country_combined_special_status_power(<IO>)
+
+country_combined_special_status_power_fraction = {
+    international_organization = <key>
+    value = <float>
+}
+# Get the political power fraction of the country within the target international organization with all of its special statuses combined.
+# country_combined_special_status_power(<IO>)
 
 # ----- Disease -----
 country_has_disease = <key>
