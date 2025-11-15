@@ -3,7 +3,50 @@
 #----------------------------------------------------------
 Launch the Map Editor by adding -map_editor to the game launch parameters
 
+Full Resolution:
+32768 x 16384
+
+Half Resolution:
+16384 x 8192
+
 #----------------------------------------------------------
-# Overview
+# Masks
 #----------------------------------------------------------
-The heightmap is split into several discrete files that are co-ordinated in the Decal Editor.
+
+#----------------------------------------------------------
+# Creating a Heightmap
+#----------------------------------------------------------
+Create your Heightmap using GIMP or whichever photo editing software you prefer.
+
+Split it into sixteen pieces and export as a 16 bit grayscale png. Copy the in_game/gfx/terrain2/decals folder into your mod and replace each heightmap_x_16_height.png with a piece of your heightmap. 1 is top left and it goes top to bottom, left to right.
+
+Each tile is 8192 x 4096
+
+Load EU5 and apply a playset with your mod in.
+
+Go to properties and launch EU5 with map_editor.
+
+Delete the various mountain decals present. Click your decals and the lock button in the top right box of the map editor. Manipulate your 16 heightmaps to your liking.
+
+Click bake.
+
+Go to your Europa Universalis V user directory and go to the baked_streaming_data folder.
+
+Create and copy the contents into in_game/gfx/terrain2/terrain_cache.
+
+Load EU5 to check everything is working. 
+
+#----------------------------------------------------------
+# Regenerating splines
+#----------------------------------------------------------
+Spline errors in error.log look like this: [jomini_spline_network_graphics_old.cpp:1416]: Could not find spline network strip of type 0 between anchors <insert Location names here>
+
+They happen if the map was modified and afterwards the Spline Network was not updated.
+
+To regenerate the Spline Network, do:
+
+    Console command SplineNetwork.ClearAssets
+    Console command SplineNetwork.AppendAssets. This takes about a minute
+    Move the generated .splnet file from my documents to the game folder (don't copy the file, move it. Files in my documents get loaded as if they were a dlc or mod so keeping it there will prevent you from getting updated files)
+
+The spline file is generated in: Documents\Paradox Interactive\Europa Universalis V\gfx\map\spline_network\; move it to: game\in_game\gfx\map\spline_network\ 
