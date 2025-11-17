@@ -1,0 +1,284 @@
+#--------------------------------------------------------------------------------
+# Scope: Location
+#--------------------------------------------------------------------------------
+# ----- General -----
+has_location_modifier = <key>
+# Does the scoped province have a given modifier 
+
+add_static_modifier_utility = {
+    modifier = <key>
+    value = <script_value>
+}
+# Checks the AI utility of adding a static modifier to the scoped object 
+
+# ----- Location -----
+has_owner = <bool>
+# Check if a location has a Owner 
+
+is_core_of = <country>
+# Is the location a core of the target country? 
+
+adjacent_to_owned_by = <country>
+# Is the area/location adjacent to an area with a country's presence in it? 
+
+adjacent_to_owned_or_owned_by_subject  = <country>
+# Is the area/location adjacent to an area with a country's or one of its subjects' presence in it? 
+
+climate = <type>
+# Checks if a location is of a specific climate 
+
+distance_to = <value>
+# Gets distance between locations 
+
+distance_to_area = <value>
+# Gets distance between a location and an area 
+
+distance_to_squared = <value>
+# gets distance squared as the crow flies between locations (much quicker than distance_to, useful if you're just comparing) 
+
+has_earthquakes = <bool>
+# Check if a location has a Earthquakes 
+
+has_volcano = <bool>
+# Check if a location has a volcano 
+
+hemisphere = <northern/southern>
+# Check if a location is either in the northern or southern hemisphere. 
+
+has_latest_road_to = <location>
+# Check if a location has the latest available road to the target location. Latest is determined by the owner of the location and what buildable road type has the highest level. 
+
+has_road_constructions = <bool>
+# Check whether location has road constructions 
+
+has_road_to = <location>
+# Check if a location has a road to the target location 
+
+is_adjacent_to_lake = <bool>
+# Check if a location is a adjacent to a lake 
+
+is_border = <bool>
+# Check if a location borders another country
+
+is_capital = <bool>
+# Check if a location is a capital 
+
+is_city = <bool>
+# Check if a location is a city 
+
+is_coastal = <bool>
+# Check if a location is coastal 
+
+is_connected_to = <location>
+# Check if a location is connected by land/strait to another location in the same country 
+
+is_currently_being_integrated = <bool>
+# Check if a location is currently being integrated 
+
+is_discovered_by = <country>
+# Is the scope location/country discovered by the target country? 
+
+is_east_of = <location> 
+# Check if a location is east of another location
+
+is_land = <bool>
+# Check if a location is land 
+
+is_neighbor_of = <country>
+# Is the country or location a Neighbor to the specified country? 
+
+is_neighbor_of_international_organization = <io>
+# Is the country or location a neighbor to the specified international organization? 
+
+
+border_distance_to = {
+    country = <country>
+    value = <value>
+}
+# Gets distance between borders of two nations or a location and a nation. 
+# Usage: border_distance_to(country)
+
+has_road_of_type_to = {
+    target = <location>
+    type = <type>
+}
+# Check if a location has a road to the target location of the specified type. 
+
+# ----- Pop -----
+development = <value>
+# Checks if a location has a certain Development 
+
+food_consumption = <value>
+# Amount of consumed food 
+
+food_production = <value>
+# Amount of food production 
+
+average_location_literacy = <value>
+# Checks if a location has a certain average literacy 
+
+average_satisfaction = <value>
+# Checks if a location has a certain average satisfaction of its pops 
+
+employment_percentage = <value>
+# Checks if a location has a certain unemployement percentage 
+
+gfx_culture_applicable = <key>
+# Checks if a culture gfx applies to the scope object 
+
+goods_output = <value>
+# Check how much goods the scope location produces. 
+
+has_any_convertable_pops = <bool>
+# Check if a location has any pops that can be converted to state religion 
+
+has_exports = <bool>
+# Check if a location has a Exports 
+
+has_imports = <bool>
+# Check if a location has a imports 
+
+has_institution = <key>
+# Checks if a country has an institution 
+
+integration_level = <value>
+# Checks the integration level of a location 
+
+integration_progress = <value>
+# Checks the integration progress of a location 
+
+can_become_rank = <key>
+# Check if a location can become the supplied location rank 
+
+is_burgher_positive_deficit = <bool>
+# Checks if a building location does not have negative burgher deficit
+
+is_full_expanded_rgo = <bool>
+# Check if a location has its RGO fully expanded
+
+is_labourer_positive_deficit = <bool>
+# Checks if a building location does not have negative labourer deficit
+
+is_location_holy_site_for = <key>
+# Is the location a holy site for the target religion? 
+
+is_mining_rgo = <bool>
+# Check if a location has a mining_rgo 
+
+culture_percentage = {
+    culture = <key>
+    value = <value>
+}
+# Gets the percentage of the population that follow a particular culture in the location/province/province_defintion / area/region/subcontinent/continent 
+
+culture_population = {
+    culture = <key>
+    value = <value>
+}
+# Gets the absolute number of the population that follow a particular culture in the location/province/province_defintion / area/region/subcontinent/continent 
+
+culture_group_percentage = {
+    culture_group = <key>
+    value = <value>
+}
+# Gets the percentage of the population that follow a particular culture group in the location/province/province_defintion / area/region/subcontinent/continent
+
+culture_group_population = {
+    culture_group = <key>
+    value = <value>
+}
+# Gets the absolute number of the population that follow a particular religion in the location/province/province_defintion / area/region/subcontinent/continent 
+
+# ----- Military -----
+garrison_percentage = <value>
+# Checks the garrison percentage of the location in scope 
+
+garrison_strength = <value>
+# Checks the garrison strength of the location in scope 
+
+has_combat = <bool>
+# Check if a location has a combat 
+
+has_fort = <bool>
+# Check if a location has any fort 
+
+has_privateers_from = <country>
+# Does the location has privateers of the target country? 
+
+has_river = <bool>
+# Check if a location has a river 
+
+has_siege = <bool>
+# Check if a location has a siege 
+
+in_zone_of_control = <bool>
+# Check if a location is in the zone of control of a friendly fort 
+
+is_looted = <bool>
+# Check if a location is looted 
+
+# ----- Building -----
+has_building = <type>
+# Checks if a location has a specific building 
+
+has_building_with_at_least_one_level  = <type>
+# Checks if a location has a specific building and it has at least one level
+
+has_building_with_graphical_tag = <tag>
+# Checks if a location has a building with the specified graphical tags 
+
+has_building_with_graphical_tag_and_at_least_one_level = <tag>
+# Checks if a location has a building with the specified graphical tags and at least one level 
+
+building_efficiency = <value>
+# Does the location have the specific efficiency of a building 
+
+can_build_building = <type>
+# Checks if the location/country can build the specified building. Location only checks local requirements, country checks the country scope requirements. 
+
+has_market_construction = <bool>
+# Is the location building a market? 
+
+has_owned_buildings = <country>
+# Has the target country got some buildings here? 
+
+is_market_center = <bool>
+# Check if a location is a market center 
+
+building_type_max_level = {
+    building_type = <type>
+    value = <value>
+    owner = <country> # optional
+}
+# Gets the max level for a building type in a location. 
+
+# ----- Disease -----
+has_any_disease_present = <bool>
+# Checks if the location or subunit is affected by ANY disease active. 
+
+disease_has_stagnated = <type>
+# Checks if a disease has stagnated in a location or subunit. 
+
+intrinsic_disease_resistance = <value>
+# Checks the intrinsic disease resistance in a location (e.g. from buildings) 
+
+disease_outbreak_presence = {
+    disease_outbreak = <type>
+    value = <value>
+}
+# Checks the presence of a disease in a location or subunit. 
+# Usage: disease_outbreak_presence(<disease_outbreak>)
+
+disease_presence = {
+    disease = <type>
+    value = <value>
+}
+# Checks the presence of a disease in a location or subunit. 
+# Usage: disease_presence(<disease>)
+
+disease_resistance = {
+    target = <type>
+    value = <value>
+}
+# Checks the resistance to a disease in a location or subunit. 
+# Usage: disease_resistance(<disease>)

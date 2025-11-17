@@ -304,7 +304,6 @@ average_control_in_home_region = <value>
 has_sound_tolls = <bool>
 # country has sound tolls 
 
-# ----- Instability -----
 stability = <value>
 # How much Stability does the country/IO have?
 

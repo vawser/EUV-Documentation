@@ -5,20 +5,6 @@
 has_international_organization_modifier = <key>
 # Checks if the scoped international organization have a given modifier 
 
-combined_unique_special_status_power = <value>
-
-country_has_special_status = <country>
-# Does the country have a special status in this international organization? 
-
-has_special_status_available = <special_status>
-# Checks if an international organization has a particular special status available 
-
-average_special_status_power = {
-    type = <special_status>
-    value = <value>
-}
-# Get the average political power of the target special status. 
-
 can_annex_members = <country>
 # Can a country annex members in the scope international organization? 
 
@@ -40,9 +26,6 @@ has_cached_or_cast_vote_for = <country>
 
 has_cooldown = <key>
 # Does a country have a particular cooldown active 
-
-has_elections = <bool>
-# Checks if an international organization has electors 
 
 has_land_ownership_rule = <bool>
 # Checks if the international organization has a landownership rule set 
@@ -116,6 +99,124 @@ law_is_locked_in_international_organization = <key>
 law_visible_to_international_organization = <key>
 # Can we see a policy for a law in the scope international organization? 
 
+location_can_be_added_to_international_organization = <location>
+# Can we add a location to the scope international organization? 
+
+location_can_be_removed_from_international_organization = <location>
+# Can we remove a location from the scope international organization? 
+
+resolution_is_active = <resolution>
+# Is the resolution currently being debated in the scope international organization/situation?
+
+total_enemies = <value>
+# Counts the number of enemies of an international organization 
+
+total_locations_owned = <value>
+# Counts the number of locations owned by an international organization
+
+total_members = <value>
+# Counts the number of members in an international organization 
+
+vote_is_locked = <country>
+# Is a country's vote locked in the scope international organization/situation?
+
+votes_for_resolution = {
+    resolution = <key>
+    outcome = <type>
+    value = <value>
+}
+# Checks the number of votes for a particular outcome of a resolution. 
+# Usage: votes_for_resolution(<resolution_key>|<thing>)
+
+total_payment_contribution = {
+    payment = <type>
+}
+# Gets the sum all member countries have to pay for the specified IO and payment type. 
+
+organization_strength_relative_to_country = {
+    target = <country>
+    value = <value>
+    exclude_target = <bool>
+}
+# Gets the relative strength of the scope organization to the supplied country 
+# Usage: organization_strength_relative_to_country(<target>|<bool exclude_target>)
+
+# ----- Administration -----
+self_control = <value>
+# How much self control does the country/IO have? 
+
+self_control_percentage = <value>
+# How high the percentage of the current self control compared to the maximum does the country/IO have? 
+
+stability = <value>
+# How much Stability does the country/IO have?
+
+stability_percentage = <value>
+# How high the percentage of the current Stability compared to the maximum does the country/IO have? 
+
+# ----- Special Status -----
+combined_unique_special_status_power = <value>
+# Get the combined special status power of all countries with their highest ranking special status in the international organization 
+
+country_has_special_status = <country>
+# Does the country have a special status in this international organization? 
+
+has_special_status_available = <special_status>
+# Checks if an international organization has a particular special status available 
+
+max_countries_with_special_status = <value>
+# gets the max number of countries with a specific special status in an international organization 
+
+num_countries_with_special_status = <value>
+# gets the number of countries with a particular special status in an international organization 
+
+special_status_can_be_bestowed = <key>
+# Can the supplied special status be bestowed on the supplied country in the scope international organization? 
+
+special_status_power = {
+    country = <country>
+    type = <special_status>
+    value = <value>
+}
+# Get the political power of the specified country in an organization with that specified special status. 
+# Usage: special_status_power(<country>|<special status>)
+
+special_status_power_fraction = {
+    country = <country>
+    type = <special_status>
+    value = <value>
+}
+# Get the political power fraction of the specified country in an organization with that specified special status. 
+# Usage: special_status_power(<country>|<special status>)
+
+average_special_status_power = {
+    type = <special_status>
+    value = <value>
+}
+# Get the average political power of the target special status. 
+
+total_special_status_power = {
+    type = <special_status>
+    value = <value>
+}
+# Get the political power of all countries in an organization with that specified special status. 
+# Usage: total_special_status_power(<special status>)
+
+total_special_status_power_fraction = {
+    type = <special_status>
+    value = <value>
+}
+# Get the percentage political power of the target special status compared to the total amount of political power of all special statuses combined. 
+# Usage: special_status_power_fraction(<special status>)
+
+total_unique_special_status_power = {
+    type = <special_status>
+    value = <value>
+}
+# Get the political power of all countries in an organization with that specified special status. 
+# Usage: total_special_status_power(<special status>)
+
+# ----- Leader -----
 leader_change_method = <type>
 # Check if the international organization has the specified leader changed method (rotation/vote/lottery/none) 
 
@@ -128,9 +229,37 @@ leader_special_status_power = <value>
 leader_special_status_power_fraction = <value>
 # Get the fraction of the special status power of all special statuses with the 'leader' trait 
 
+leader_type = <type>
+# Check if the international organization has the specified leader type (character/country/none) 
+
+has_elections = <bool>
+# Checks if an international organization has electors 
+
+months_between_leader_changes = <value>
+# Checks if a country has a specific reform 
+
+num_of_electors = <value>
+# Checks how many electors the international organization has 
+
 # ----- Diplomacy -----
 io_within_diplomatic_range = <country>
 # Is the target international organization within diplomatic range? 
+
+war_exhaustion = <value>
+# How much WarExhaustion does the country/IO have? 
+
+war_exhaustion_percentage = <value>
+# How high the percentage of the current WarExhaustion compared to the maximum does the country/IO have? 
+
+# ----- Policy -----
+policy_enabled_to_international_organization = <key>
+# Can we enact a policy in the scope international organization? 
+
+policy_is_locked_in_international_organization = <key>
+# Is a policy locked in the scope international organization? 
+
+policy_visible_to_international_organization = <key>
+# Can we see a policy in the scope international organization? 
 
 # ----- Parliament -----
 has_parliament = <bool>
@@ -141,6 +270,33 @@ is_active_parliament = <bool>
 
 has_ongoing_parliament_debate = <bool>
 # Country / international organization has an active parliament debate 
+
+months_since_last_parliament_called = <value>
+# Checks how many months its been since the country / international organization last called a parliament 
+
+num_of_active_parliament_agendas = <value>
+# Check how many parliament agendas are currently available to the country or international organization. 
+
+remaining_parliament_days = <value>
+# Checks how many days are left in the parliament of the country / international organization before it concludes. Returns -1 when there is no parliament active. 
+
+parliament_issue_chance = <value>
+# The chance an issue will be selected 
+
+parliament_issue_support = <value>
+# The current support in parliament for an issue 
+
+parliament_issue_will_pass = <bool>
+# Check if the parliament issue of the country / international in debate will pass 
+
+parliament_type_enabled_in_international_organization = <parliament_type>
+# Is a parliament type enabled in the scope international organization?
+
+parliament_type_is_locked_in_international_organization = <parliament_type>
+# Is a parliament type locked in the scope international organization? 
+
+parliament_type_visible_in_international_organization = <parliament_type>
+# Can we see a parliament type in the scope international organization? 
 
 # ----- Governance -----
 government_power = <value>
@@ -234,9 +390,53 @@ inflation = <value>
 inflation_percentage = <value>
 # How high the percentage of the current inflation compared to the maximum does the country/IO have? 
 
+# ----- Religion -----
+purity = <value>
+# How much purity does the country/IO have? 
+
+purity_percentage = <value>
+# How high the percentage of the current purity compared to the maximum does the country/IO have? 
+
+religious_influence = <value>
+# How much religious influence does the country/IO have? 
+
+religious_influence_percentage = <value>
+# How high the percentage of the current religious influence compared to the maximum does the country/IO have? 
+
+righteousness = <value>
+# How much righteousness does the country/IO have? 
+
+righteousness_percentage = <value>
+# How high the percentage of the current righteousness compared to the maximum does the country/IO have? 
+
+rite_power = <value>
+# How much rite power does the country/IO have? 
+
+rite_power_percentage = <value>
+# How high the percentage of the current rite power compared to the maximum does the country/IO have? 
+
 # ----- Military -----
+manpower = <value>
+# How much Manpower does the country/IO have? 
+
+sailors = <value>
+# How much Sailors does the country/IO have? 
+
 army_tradition = <value>
 # Checks the army tradition a country has.
 
 army_tradition_percentage = <value>
 # Checks the army tradition as a percentage a country has.
+
+navy_tradition = <value>
+# How much navy tradition does the country/IO have?
+
+navy_tradition_percentage = <value>
+# How high the percentage of the current navy tradition compared to the maximum does the country/IO have?
+
+# ----- Utility -----
+modifier_utility = <key>
+# Checks the AI utility of a modifier 
+
+modifier_utility_include_locations = <key>
+# Checks the AI utility of a modifier with location checks 	
