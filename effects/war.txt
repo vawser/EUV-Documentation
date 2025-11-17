@@ -1,0 +1,8 @@
+#--------------------------------------------------------------------------------
+# Scope: War
+#--------------------------------------------------------------------------------
+add_bonus_warscore = {
+    country = <country>
+    amount = <value>
+}
+# Adds some bonus war score to the supplied country.

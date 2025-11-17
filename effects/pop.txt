@@ -1,0 +1,36 @@
+#--------------------------------------------------------------------------------
+# Scope: Pop
+#--------------------------------------------------------------------------------
+add_pop_satisfaction = <value>
+# Changes the Satisfaction of a pop 
+
+add_pop_size = <value>
+# Changes the size of a pop 
+
+change_pop_allegiance = <rebel type>
+# Changes rebel allegiance of pop to target Rebel 
+
+change_pop_culture = <culture>
+# Changes culture for a pop 
+
+change_pop_owner = <country>
+# Changes owner of pop to target country 
+
+change_pop_religion = <religion>
+# Changes religion for a pop 
+
+change_pop_type = <type>
+# changes pop type of the pop 
+
+remove_pop_allegiance = <type>
+# Remove allegienace of a pop 
+
+split_pop = {
+    size = <value>      # Fixed size
+    fraction = <value>  # Percentage of size
+    religion = <key>    # Religion target
+    type = <key>        # Pop Type target
+    culture = <key>     # Culture target
+    location = <key>    # Location target
+}
+# Splits a pop and makes changes to it. If both size and fraction are scripted, it will use the largest.
