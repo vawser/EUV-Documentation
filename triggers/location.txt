@@ -5,11 +5,11 @@
 has_location_modifier = <key>
 # Does the scoped province have a given modifier 
 
-add_static_modifier_utility = {
-    modifier = <key>
-    value = <script_value>
-}
-# Checks the AI utility of adding a static modifier to the scoped object 
+location_key = <key>
+# Checks if a location is the specific one (from named_location) 
+
+location_size = <value>
+# Checks if a location has a certain pixel count 
 
 # ----- Location -----
 has_owner = <bool>
@@ -24,8 +24,23 @@ adjacent_to_owned_by = <country>
 adjacent_to_owned_or_owned_by_subject  = <country>
 # Is the area/location adjacent to an area with a country's or one of its subjects' presence in it? 
 
+local_control = <value>
+# Checks if a location has a certain control 
+
+max_control = <value>
+# Checks the max control in a location 
+
+proximity = <value>
+# Checks the proximity to owner capital in a location 
+
 climate = <type>
 # Checks if a location is of a specific climate 
+
+topography = <type>
+# Checks if a location is of a specific Topography type 
+
+vegetation = <type>
+# Checks if a location is of a specific Vegetation type 
 
 distance_to = <value>
 # Gets distance between locations 
@@ -44,15 +59,6 @@ has_volcano = <bool>
 
 hemisphere = <northern/southern>
 # Check if a location is either in the northern or southern hemisphere. 
-
-has_latest_road_to = <location>
-# Check if a location has the latest available road to the target location. Latest is determined by the owner of the location and what buildable road type has the highest level. 
-
-has_road_constructions = <bool>
-# Check whether location has road constructions 
-
-has_road_to = <location>
-# Check if a location has a road to the target location 
 
 is_adjacent_to_lake = <bool>
 # Check if a location is a adjacent to a lake 
@@ -84,12 +90,68 @@ is_east_of = <location>
 is_land = <bool>
 # Check if a location is land 
 
+is_passable = <bool>
+# Check if a location is passable 
+
+is_port = <bool>
+# Check if a location has a port 
+
+is_province_capital = <bool>
+# Check if a location is the province capital 
+
 is_neighbor_of = <country>
 # Is the country or location a Neighbor to the specified country? 
 
 is_neighbor_of_international_organization = <io>
 # Is the country or location a neighbor to the specified international organization? 
 
+is_neighbor_of_location = <location>
+# Check if a location is neighbour to another 
+
+is_overseas_for_owner = <bool>
+# Check if a location or province is overseas for owber 
+
+is_required_for_formable = <key>
+# Check if the location scope is required by the formable 
+
+is_unified_culture = <bool>
+# Check if a location has culture unified with the owner 
+
+is_ownable = <bool>
+# Check if a location is ownable, i.e. not sea, lake or an impassable 
+
+is_owned_by_any_international_organization  = <bool>
+# Check if a location is owned by any international organization 
+
+is_owned_by_international_organization = <io>
+# Check if a location is owned by an international organization 
+
+is_owned_or_owned_by_subjects_of = <country>
+# Check if the location is owned by the target country or its subjects 
+
+is_owned_or_owned_by_subjects_or_below_of = <country
+# Check if the location is owned by the target country or its subjects or the subjects' subject 
+
+location_within_range = <country>
+# Checks if a location has a certain population within range 
+
+rank_index = <value>
+# Checks if a location has a Location Rank of a certain index 
+
+can_become_rank = <key>
+# Check if a location can become the supplied location rank 
+
+winter_level = <value>
+# winter level check 
+
+winter_power = <value>
+# ?
+
+within_colonial_range_of = <country>
+# Is the location within Colonial range of the target country?
+
+within_naval_range_of = <country>
+# Is the location within naval range of the target country? 
 
 border_distance_to = {
     country = <country>
@@ -98,15 +160,18 @@ border_distance_to = {
 # Gets distance between borders of two nations or a location and a nation. 
 # Usage: border_distance_to(country)
 
-has_road_of_type_to = {
-    target = <location>
-    type = <type>
-}
-# Check if a location has a road to the target location of the specified type. 
-
 # ----- Pop -----
+population = <value>
+# Checks if the location/province/province_defintion / area/region/subcontinent/continent has a certain population 
+
 development = <value>
 # Checks if a location has a certain Development 
+
+prosperity = <value>
+# Checks if a location has a certain prosperity 
+
+location_tax_base = <value>
+# Checks the tax-base of a location 
 
 food_consumption = <value>
 # Amount of consumed food 
@@ -122,6 +187,12 @@ average_satisfaction = <value>
 
 employment_percentage = <value>
 # Checks if a location has a certain unemployement percentage 
+
+max_rgo_workers = <value>
+# Checks if a location has a certain max number of RGO workers 
+
+migration_attraction = <value>
+# Checks if a location has a certain migration_attraction
 
 gfx_culture_applicable = <key>
 # Checks if a culture gfx applies to the scope object 
@@ -147,9 +218,6 @@ integration_level = <value>
 integration_progress = <value>
 # Checks the integration progress of a location 
 
-can_become_rank = <key>
-# Check if a location can become the supplied location rank 
-
 is_burgher_positive_deficit = <bool>
 # Checks if a building location does not have negative burgher deficit
 
@@ -164,6 +232,55 @@ is_location_holy_site_for = <key>
 
 is_mining_rgo = <bool>
 # Check if a location has a mining_rgo 
+
+local_cultural_unity = <value>
+# Checks the percentage the dominant-culture has in a location 
+
+local_political_power_fraction = <value>
+# Checks the fraction this location has of the total political power of a country 
+
+local_religious_unity = <value>
+# Checks the percentage the dominant-religion has in a location 
+
+location_art_quality = <value>
+# Checks the total art quality in a location 
+
+location_max_population = <value>
+# Checks if a location has a certain pixel count 
+
+location_max_winter_level = <value>
+# Checks the maximum winter level of a location
+
+location_num_holy_sites = <value>
+# Checks if a location has a certain number of works of art 
+
+location_population_percentage = <value>
+# Checks if a location has a certain percentage of population capacity 
+
+location_unemployed_population_for_building_type = <type>
+# Checks if a location has a certain unemployed population for the supplied building type (with optional owner) 
+
+location_works_of_art_star_rating = <value>
+# Checks if a country has a certain amount of work of arts
+
+monthly_conversion = <value>
+# Checks if a location has an potential conversion of X per month 
+
+rgo_workers = <value>
+# Checks if a location has a certain number of RGO workers 
+
+population_with_traits = {
+    limit = {
+        <pop triggers>
+    }
+    
+    ||
+    
+    scripted_trigger = <key>
+    value = <value>
+}
+# Checks if the location has x amount of population with specific pop traits. 
+# Usage: population_with_traits(<scripted trigger key>)
 
 culture_percentage = {
     culture = <key>
@@ -189,12 +306,39 @@ culture_group_population = {
 }
 # Gets the absolute number of the population that follow a particular religion in the location/province/province_defintion / area/region/subcontinent/continent 
 
+religion_percentage = {
+    religion = <key>
+    value = <value>
+}
+# Gets the percentage of the population that follow a particular religion in the location/province/province_defintion / area/region/subcontinent/continent
+
+religion_population = {
+    religion = <key>
+    value = <value>
+}
+# Gets the absolute number of the population that follow a particular religion in the location/province/province_defintion / area/region/subcontinent/continent
+
+religion_group_percentage = {
+    religion_group = <key>
+    value = <value>
+}
+# Gets the percentage of the population that follow a particular religion group in the location/province/province_defintion / area/region/subcontinent/continent
+
+religion_group_population = {
+    religion_group = <key>
+    value = <value>
+}
+# Gets the absolute number of the population that follow a particular religion group in the location/province/province_defintion / area/region/subcontinent/continent 
+
 # ----- Military -----
 garrison_percentage = <value>
 # Checks the garrison percentage of the location in scope 
 
 garrison_strength = <value>
 # Checks the garrison strength of the location in scope 
+
+max_garrison_strength = <value>
+# Checks the max garrison strength of the location in scope 
 
 has_combat = <bool>
 # Check if a location has a combat 
@@ -217,7 +361,27 @@ in_zone_of_control = <bool>
 is_looted = <bool>
 # Check if a location is looted 
 
-# ----- Building -----
+location_maritime_merchant_power = <value>
+# gets the maritime merchant power for a country in the scope location 
+
+location_privateer_power = <value>
+# gets the maritime privateeer power for a country in the scope location 
+
+location_maritime_presence_power = {
+    country = <country>
+    value = <value>
+}
+# Gets the maritime presence power for a country in the scope location. 
+
+location_peace_cost = {
+    giver = <country>
+    taker = <country>
+    value = <threshold>
+}
+# Gets the peace cost for the location according to giver and taker countries 
+# Usage: location_peace_cost(<giver>|<taker>)
+
+# ----- Industry -----
 has_building = <type>
 # Checks if a location has a specific building 
 
@@ -245,12 +409,60 @@ has_owned_buildings = <country>
 is_market_center = <bool>
 # Check if a location is a market center 
 
+location_building_level = <value>
+# Checks if a location has a building type at a certain level (with optional owner) 
+
+market_access = <value>
+# Checks if a location has certain market access 
+
+num_buildings = <value>
+# Checks if a location has a certain amount of buildings 
+
+num_civil_constructions = <value>
+# Check how many civil_constructions a location has 
+
+num_foreign_buildings = <value>
+# Checks if a location has a certain amount of foreign buildings 
+
+num_army_constructions = <value>
+# Check how many army_constructions a location has 
+
+num_navy_constructions = <value>
+# Check how many navy_constructions a location has 
+
+num_roads = <value>
+# Check how many roads a location has 
+
+has_latest_road_to = <location>
+# Check if a location has the latest available road to the target location. Latest is determined by the owner of the location and what buildable road type has the highest level. 
+
+has_road_constructions = <bool>
+# Check whether location has road constructions 
+
+has_road_to = <location>
+# Check if a location has a road to the target location
+
+raw_material_output = <value>
+# Check how much raw material the scope location produces. 
+
+relative_raw_material_price = <value>
+# Checks the price of a location's raw material in its market as a percentage of the base price of that material 
+
+total_building_levels = <value>
+# Checks if a location has a certain total amount of building levels 
+
 building_type_max_level = {
     building_type = <type>
     value = <value>
     owner = <country> # optional
 }
 # Gets the max level for a building type in a location. 
+
+has_road_of_type_to = {
+    target = <location>
+    type = <type>
+}
+# Check if a location has a road to the target location of the specified type. 
 
 # ----- Disease -----
 has_any_disease_present = <bool>
@@ -282,3 +494,22 @@ disease_resistance = {
 }
 # Checks the resistance to a disease in a location or subunit. 
 # Usage: disease_resistance(<disease>)
+
+# ----- Utility -----
+modifier_utility = <key>
+# Checks the AI utility of a modifier 
+
+modifier_utility_include_locations = <key>
+# Checks the AI utility of a modifier with location checks 	
+
+add_static_modifier_utility = {
+    modifier = <key>
+    value = <script_value>
+}
+# Checks the AI utility of adding a static modifier to the scoped object 
+
+remove_static_modifier_utility = {
+    modifier = <key>
+    value = <script_value>
+}
+# Checks the AI utility of removing a static modifier from the scoped object 

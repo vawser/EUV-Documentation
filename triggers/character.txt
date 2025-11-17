@@ -277,6 +277,7 @@ num_of_traits_of_category = {
 }
 # The number of traits of a specified category the character has. 
 
+# ----- Utility -----
 add_static_modifier_utility = {
     modifier = <key>
     value = <script_value>

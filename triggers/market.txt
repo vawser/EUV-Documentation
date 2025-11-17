@@ -1,0 +1,110 @@
+#--------------------------------------------------------------------------------
+# Scope: Market
+#--------------------------------------------------------------------------------
+available_merchant_capacity = <value>
+# gets the market available merchant capacity for a country in the scope market 
+
+demands_goods = <goods>
+# Check if the market scope has a demand for the target goods. 
+
+demands_goods_by_pops = <goods>
+# Check if the market has any pop demand for the target goods.
+
+food_price = <value>
+# Checks how much the food in the current market costs 
+
+has_merchant = <country>
+# checks if the market has a merchant of the specific country. 
+
+has_temporary_demand = <demand>
+# Checks if a market has a certain temporary demand 
+
+has_temporary_demands = <bool>
+# Checks if a market has a certain temporary demand 
+
+in_trade_range_of = <country>
+# Is the market within trading range of a merchant the target country? 
+
+is_export_banned = <goods>
+# Checks if export of specific goods is banned in this market 
+
+is_import_banned = <goods>
+# Checks if import of specific goods is banned in this market 
+
+is_produced_in_market = <goods>
+# Checks if a specific goods in produced in this market 
+
+is_projected_to_run_out_of_food_stockpile  = <bool>
+# Checks if a market is projected to run out of food 
+
+is_traded_in_market = <goods>
+# Checks if a specific goods in traded in this market 
+
+market_food = <value>
+# Checks how much food is in the market stockpile 
+
+market_food_deficit = <value>
+# Checks how much food is missing in the market 
+
+market_food_percentage = <value>
+# Checks how much food is in the market stockpile percentage wise 
+
+market_food_traded = <value>
+# Checks how much food is traded in the market
+
+market_max_food = <value>
+# Checks how much food can be stockpiled in the market 
+
+market_monthly_food_balance = <value>
+# Checks what the food balance is in the market 
+
+market_population = <value>
+# Checks how many pops are in the market 
+
+market_possible_goods_trade_surplus = <value>
+# gets the possible trade surplus for the goods in the scope market 
+
+merchant_capacity = <value>
+# gets the market merchant capacity for a country in the scope market 
+
+merchant_power_in_market = <value>
+# gets the market merchant power for a country in the scope market 
+
+total_goods_traded = <value>
+# Check the total amount of goods that went through this market last month 
+
+total_goods_value_traded = <value>
+# Check the total value of goods that went through this market last month 
+
+total_merchant_power = <value>
+# Check the level of this Building? 
+
+used_merchant_capacity = <value>
+# gets the market used merchant capacity for a country in the scope market 
+
+raw_material_amount  = {
+    goods = <goods>
+    value = <value>
+}
+# Check how many locations in the province_defintion/area / region/subcontinent/continent produce the specified raw material. 
+# Usage: raw_material_amount(<goods scope>)
+
+has_merchant_power = {
+    country = <country>
+    key = <key>
+}
+# does the market have a merchant power for? 
+
+goods_demand_in_market = {
+    goods = <goods>
+    value = <value>
+}
+# Checks how much demand exists of a good in the market. 
+# Usage: goods_demand_in_market(<goods>)
+
+goods_supply_in_market = {
+    goods = <goods>
+    value = <value>
+}
+# Checks how much supply exists of a good in the market. 
+# Usage: goods_supply_in_market(<goods>)

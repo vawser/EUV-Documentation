@@ -1,0 +1,60 @@
+#--------------------------------------------------------------------------------
+# Scope: War
+#--------------------------------------------------------------------------------
+can_join_as_attacker = <country>
+# Can the target country join the war in scope as attacker ? 
+
+can_join_as_defender = <country>
+# Can the target country join the war in scope as defender ? 
+
+has_casus_belli = <bool>
+# Checks if that war has a CB specified at all 
+
+is_a_defender = <country>
+# Is the target country a defender in the war? 
+
+is_an_attacker = <country>
+# Is the target country an attacker in the war? 
+
+is_civil_war_for = <country>
+# Is the current war a civil war for the target country? 
+
+is_in_war = <country>
+# Is the target country in the war? 
+
+is_no_cb_war = <bool>
+# Checks if that war was started without any casus belli ('no cb') 
+
+join_war_reason = <key>
+# Checks the reason for a country joining a war. 
+
+war_length_in_years = <value>
+# Checks how many years the current war has been going. 
+
+war_length = <value>
+# Checks how many months the current war has been going. 
+
+war_stalling_length = <value>
+# Checks how many months with no action have passed in the current war. 
+
+war_stalling_length_in_years = <value>
+# Checks how many years with no action have passed in the current war.
+
+war_score_of_country {
+    country = <country>
+    value = <value>
+}
+# Check how much war score the target country has in the current war.
+# Usage: war_score_of_country(<country>)
+
+is_on_same_side = {
+    country = <country>
+    target = <country>
+}
+# Check if the two countries are on the same side. 
+
+is_on_opposite_sides = {
+    country = <country>
+    target = <country>
+}
+# Check if the two countries are in opposing sides. 

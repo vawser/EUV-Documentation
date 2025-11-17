@@ -1,0 +1,29 @@
+#--------------------------------------------------------------------------------
+# Scope: Pop
+#--------------------------------------------------------------------------------
+gfx_culture_applicable = <key>
+# Checks if a culture gfx applies to the scope object 
+
+has_rebel = <bool>
+# Check if a pop has allegiance to a rebel 
+
+is_linked_to_foreign_building = <bool>
+# Check if a pop is linked to a foreign building 
+
+is_upper_class = <bool>
+# Check if a pop is upper class or not 
+
+pop_character_chance = <value>
+# How likely are characters to spawn from this pop? 
+
+pop_knows_about_goods = <goods>
+# Checks if a pop knows about a goods enough to demand it
+
+pop_literacy = <value>
+# How literate is this pop? 
+
+pop_satisfaction = <value>
+# How satisfied is this pop? 
+
+pop_size = <value>
+# How big is this pop? 
