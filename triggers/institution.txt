@@ -1,0 +1,8 @@
+#--------------------------------------------------------------------------------
+# Scope: Institution
+#--------------------------------------------------------------------------------
+has_spawned = <bool>
+# Has the institution spawned anywhere? 
+
+is_embraced_for = <country>
+# Is the institution embraced by the target country?

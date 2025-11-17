@@ -1,0 +1,63 @@
+#--------------------------------------------------------------------------------
+# Scope: Culture
+#--------------------------------------------------------------------------------
+cultural_influence = <value>
+# How much influence does the culture have? 
+
+cultural_tradition = <value>
+# How much tradition does the culture have? 
+
+gfx_culture_applicable = <key>
+# Checks if a culture gfx applies to the scope object 
+
+has_any_culture_group = <bool>
+# If a culture belongs to any culture group. 
+
+has_culture_group = <key>
+# If a culture belongs to a specific culture group. 
+
+has_culture_with_tag = <key>
+# Checks if a culture has the specified tags 
+
+has_graphical_culture = <key>
+# Check if a culture has a graphical culture 
+
+has_shared_culture_group = <culture>
+# If a culture belongs to a specific culture group. 
+
+is_accepted_in = <country>
+# If a culture is accepted in the target country? 
+
+is_merged_culture_group = <cool>
+# If a culture has been merged from a culture group. 
+
+is_merged_culture_group_of = <key>
+# If a culture has been merged from this specific culture group.
+
+is_primary_in = <country>
+# If a culture is a primary culture in the target country? 
+
+is_primary_or_accepted_in = <country>
+# If a culture is a primary culture or accepted in the target country?
+
+is_tolerated_in = <country> 
+# If a culture is tolerated in the target country? 
+
+cultural_view = {
+    target = <culture>
+    value = <value>
+}
+# Does the culture have the specified opinion of the target? 
+
+reverse_cultural_view = {
+    target = <culture>
+    value = <value>
+}
+# Does the target have the specified opinion of the culture? 
+
+culture_opinion_impact = {
+    culture = <culture>
+    value = <value>
+}
+# Opinion impact of a particular culture on another 
+# Usage: culture_opinion_impact(<culture link>)

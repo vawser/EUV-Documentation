@@ -1,732 +1,3 @@
-#-----------------------------------
-# Comparison Types
-#-----------------------------------
-Less Than: <
-Less Than or Equal: <=
-Equals: =
-Not Equals: !=
-Greater Than: >
-Greater Than or Equal: >=
-
-For value comparisons, these comparitors can be used. 
-
-#-----------------------------------
-# Triggers
-#-----------------------------------
-For some triggers, the scope parameters can be condensed, for example:
-
-num_of_trait_by_category = {
-    type = <trait_category>
-    value <comparator> <integer>
-}
-
-Can be used as such:
-
-num_of_trait_by_category(<trait_category>) = <value>
-
-#--------------------------------------------------------------------------------
-# Scope: None
-#--------------------------------------------------------------------------------
-# ----- Flow -----
-Flow triggers are used to control how other triggers are executed.
-
-all_false = { 
-    <triggers> 
-}
-# true if all children are false (equivalent to NOR) 
-
-and = { 
-    <triggers> 
-}
-# all inside trigger must be true 
-
-any_false = { 
-    <triggers> 
-}
-# true if any child is false (equivalent to NAND) 
-
-calc_true_if = {
-    amount = <value>
-    
-    <triggers>
-}
-# Returns true if the specified number of sub-triggers return true 
-
-custom_description = {
-    text = <loc key>
-    subject = <scope> # optional
-    object = <scope> # optional
-    value = <script value> # optional
-    
-    <triggers>
-}
-# Wraps triggers that get a custom description instead of the auto-generated one 
-
-hidden_trigger = {
-    <triggers>
-}
-# Enclosed triggers are not shown in tooltips 
-
-# ----- Actions -----
-These act as effects within a trigger scope.
-
-debug_log = <string>
-# Log whether the parent trigger succeeded or failed 
-
-debug_log_details = <string>
-# Log whether the parent trigger succeeded or failed. Log which children succeeded or failed 
-
-random_integer = <value>
-# Uniformly random integer between 0 and 2^31-1. It will be the same if evaluated on the same scope and day. 
-
-save_temporary_scope_as = <id>
-# Saves a temporary target for use during the trigger execution 
-
-save_temporary_scope_value_as = {
-    name = <id>
-    value = <value> / <bool>
-}
-# Saves a numerical or bool value as an arbitrarily-named temporary target to be referenced later in the same effect 
-
-assert_if = {
-    limit = {
-        <trigger>
-    }
-    
-    text = <string> / <loc key>
-}
-# Conditionally cause an assert during run time 
-
-assert_read = <bool> / <string>
-# Conditionally cause an assert during read time 
-
-# ----- List / Variable -----
-These are triggers related to variables and variable lists.
-
-is_in_list = <list>
-# Checks if a target in in a list 
-
-has_variable = <variable>
-# Checks whether the current scope has the specified variable set 
-
-has_variable_list = <variable list>
-# Checks whether the current scope has the specified variable list set 
-
-has_local_variable = <variable>
-# Checks whether the current scope has the specified variable set 
-
-has_local_variable_list = <variable list>
-# Checks whether the current scope has the specified variable list set 
-
-has_global_variable = <variable>
-# Checks whether the current scope has the specified variable set 
-
-has_global_variable_list = <variable list>
-# Checks whether the current scope has the specified variable list set 
-
-global_variable_list_size = {
-    name = <variable>
-    value = <script_value> / <value>
-}
-# Checks the size of a variable list 
-
-is_target_in_global_variable_list = {
-    name = <variable>
-    target = <event_target>
-}
-# Checks if a target is in a variable list 
-
-is_target_in_local_variable_list = {
-    name = <variable>
-    target = <event_target>
-}
-# Checks if a target is in a variable list 
-
-is_target_in_variable_list = {
-    name = <variable>
-    target = <event_target>
-}
-# Checks if a target is in a variable list 
-
-add_to_temporary_list = <list>
-# Saves a temporary target for use during the trigger execution 
-# If used within an any-trigger, placement within the trigger is quite important.
-# The game will iterate through every instance of the any-trigger until it finds a single instance that fulfills the requirements, and then it will stop.
-# In order to add every instance of a scope that fulfills certain conditions, use "count = all" while also placing this "effect" at the very end of the any-trigger (so that every condition is evaluated for every iteration).
-
-list_size = {
-    name = <list_name>
-    value = <script_value>
-}
-# Checks the size of a list 
-
-local_variable_list_size = {
-    name = <variable_name>
-    value = <script_value>
-}
-# Checks the size of a variable list 
-
-variable_list_size = {
-    name = <variable_name>
-    value = <script_value>
-}
-# Checks the size of a variable list 
-
-# ----- General -----
-always = <bool> / <scope>
-# Checks if the assigned yes/no value is true 
-
-ai_will_do = <value>
-# Gets the AI evaluation score of the supplied generic action ofr the supplied country 
-
-scope_type = <scope_type>
-# Checks the type of the scope object 
-
-release_only = <bool>
-# Checks if the game is in release mode or not. 
-
-debug_only = <bool>
-# Checks if the game is in debug mode or not. 
-
-exists = <scope>
-# Checks whether the specified scope target exists (check for not being the null object) 
-
-tag_exists = <scope>
-# Does a tag exist 
-
-time_of_year = {
-    min = <month.day> / <month>
-    max = <month.day> / <month>
-}
-# Check if the current date is within the bounds 
-
-current_date = <date>
-# Compare the current ingame date
-
-current_month = <month>
-# Compare the current ingame month (1..12) 
-
-current_year = <year>
-# Compare the current ingame year
-
-country_exists = <country>
-# Does the country exist? 
-
-current_age = <age>
-# Checks if it is a certain age
-
-dynasty_exists = <dynasty>
-# Does a dynasty exist
-
-has_dlc = <string>
-# Does the host have this DLC 
-
-has_fired_unique_event = <id>
-# Checks if the game has already fired the unique event 
-
-has_game_rule = <id>
-# Is the given game rule setting enabled?
-
-has_local_dlc = <string>
-# Does the host have this DLC 
-
-has_multiple_players = <bool>
-# Does the game have at least two players currently connected? 
-
-has_newsletter_subscription = <bool>
-# Has the player suscribed to the newsletter? 
-
-ironman = <bool>
-# Checks if the game is running in ironman. 
-
-is_alert_shown = <key>
-# Is the alert with the specified name shown? 
-
-is_alert_triggered = <key>
-# Is the alert with the specified name triggered? 
-
-is_camera_in_zoom_level = <key>
-# Is camera in a specified zoom level? SMALL / MEDIUM / LARGE 
-
-is_map_mode_active = <key>
-# Is map mode active? 
-
-is_multiplayer_session = <bool>
-# Is the current game session multiplayer? 
-
-is_set = <scope>
-# Checks whether the specified scope target has been set (includes being the null object) 
-
-is_situation_active = <situation>
-# Checks if the target situation is currently active 
-
-# ----- Tutorial -----
-is_tutorial_active = <bool>
-# Is the tutorial active? 
-
-is_tutorial_lesson_active = <tutorial_lession>
-# Is this the current tutorial lesson? 
-
-is_tutorial_lesson_chain_completed = <tutorial_lession>
-# Has the tutorial lesson chain with the specified key been finished? 
-
-is_tutorial_lesson_completed = <tutorial_lession>
-# Has the tutorial lesson with the specified name been finished?
-
-is_tutorial_lesson_step_completed = <tutorial_lession_step>
-# Has the tutorial lesson step been finished? 
-
-is_gamestate_tutorial_active = <bool>
-# Is the gamestate tutorial active? See save_progress_in_gamestate in tutorial_lesson_chains documentation. 
-
-can_start_tutorial_lesson = <tutorial lession>
-# Can the specified tutorial lesson be started? 
-
-# ----- GUI -----
-is_widgetid_open = <key>
-# Is the widget with the specified `widgetid` open (visible and not animating)?
-# The fastest and safest way to check. (replaces old `is_widget_open` functionality, which operated on names.) 
-
-is_tooltip_with_name_open = <key>
-# Is the tooltip with the specified name open? 
-
-current_tooltip_depth = <value>
-# What is the number of tooltips open right now? 
-
-# ----- Internation Organization -----
-unique_international_organization_type_exists = <international_organization_type>
-# Does an international organization of this type exist? 
-
-international_organization_can_add_land = <international_organization>
-# Can we add a location to the scope international organization? 
-
-international_organization_can_remove_land = <international_organization>
-# Can we remove a location from the scope international organization? 
-
-ai_issue_voting_bias = <value>
-# Gets the AI evaluation score for voting bias from the international organization 
-
-# ----- Disease -----
-disease_is_active = <disease>
-# Checks if a disease is active in the world. 
-
-disease_outbreak_is_active = <disease_outbreak>
-# Checks if a disease outbreak is active in the world. 
-
-# ----- Diplomacy -----
-can_add_relation = {
-    first = <country>
-    second = <country>
-    type = <relation type>
-}
-# Can the country have the specified scripted relation with another country. 
-
-# ----- World -----
-world_art_quality = <value>
-# Checks the total art quality in the world 
-
-world_culture_group_percentage = {
-    culture_group = <culture_group>
-    value = <value>
-}
-# Gets the percentage of the population that follow a particular culture group in the world 
-
-world_culture_group_population = {
-    culture_group = <culture_group>
-    value = <value>
-}
-# Gets the absolute number of the population that follow a particular culture group in the world 
-
-world_culture_percentage = {
-    culture = <culture>
-    value = <value>
-}
-# Gets the percentage of the population that follow a particular culture in the world 
-
-world_culture_population = {
-    culture = <culture>
-    value = <value>
-}
-# Gets the absolute number of the population that follow a particular culture in the world 
-
-world_religion_group_percentage = {
-    religion_group = <religion_group>
-    value = <value>
-}
-# Gets the percentage of the population that follow a particular religion group in the world 
-
-world_religion_group_population = {
-    religion_group = <religion_group>
-    value = <value>
-}
-# Gets the absolute number of the population that follow a particular religion group in the world 
-
-world_religion_percentage = {
-    religion = <religion>
-    value = <value>
-}
-# Gets the percentage of the population that follow a particular religion in the world 
-
-world_religion_population = {
-    religion = <religion>
-    value = <value>
-}
-# Gets the absolute number of the population that follow a particular religion in the world 
-
-#--------------------------------------------------------------------------------
-# Scope: Building
-#--------------------------------------------------------------------------------
-building_category = <id>
-# Checks if a building is linked to a certain category 
-
-building_employed_amount = <value>
-# What's the current effective amount of employed workers
-
-building_employment_size_amount = <value>
-# What's the max workers amount? 
-
-building_goods_input = <value>
-# Check how much goods the scope building requires. 
-
-building_index = <value>
-# Checks building index (order in which it was built) 
-
-building_level = <value>
-# Check the level of this building
-
-building_levels_under_construction = <value>
-# Check the level of this building whilst under construction
-
-building_max_level = <value>
-# Check the max level for a building 
-
-building_pop_type = <pop_type>
-# Checks if a building is linked to a certain pop type 
-
-building_potential_profit = <value>
-# Checks how much profit the building could make if at full worker capacity
-
-building_produced_goods = <goods>
-# Checks if a building produces a certain good 
-
-building_profit = <value>
-# Checks building profit 
-
-has_tag = <scope>
-# Check if that object has the specified tag. 
-
-is_at_max_level = <bool>
-# Checks if a building is working at full capacity 
-
-is_building_owned_by = <country>
-# Checks if a building is owned by a country 
-
-is_full_capacity = <bool>
-# Checks if a building is working at full capacity 
-
-is_lacking_goods = <bool>
-# Checks if a building is lacking goods 
-
-is_max_level = <bool>
-# Checks if a building is at maximum level 
-
-is_not_profitable = <bool>
-# Checks if a building is not profitable or not has prfot at all 
-
-is_opened = <bool>
-# Checks if a building is opened 
-
-is_profitable = <bool>
-# Checks if a building is profitable 
-
-is_subsidized = <bool>
-# Checks if a building is subsidized 
-
-#--------------------------------------------------------------------------------
-# Scope: Character
-#--------------------------------------------------------------------------------
-adm = <value>
-# Checks the administrative ability of the character 
-
-dip = <value>
-# Checks the diplomatic ability of the character 
-
-mil = <value>
-# Checks the military ability of the character 
-
-total_abilities = <value>
-# Checks the total ability of the character 
-
-education = <key>
-# Checks if a character has a specific education 
-
-fertility = <value>
-# Checks the fertility of the character 
-
-yearly_salary = <value>
-# Checks the yearly salary of the character 
-
-age_in_days = <value>
-# Checks the age of the character in days
-
-age_in_years = <value>
-# Checks the age of the character in years
-
-can_serve_in_cabinet_of = <country> 
-# Checks if the character can serve in the cabinet of the target country 
-
-character_name = <key>
-# Checks if the character has the same name key as their first name. 
-
-character_nickname = <key>
-# Check if the character has the same name key as their nickname 
-
-gfx_culture_applicable = <key>
-# Checks if a culture gfx applies to the scope object 
-
-has_available_marriage_slot = <bool>
-# Checks if the character has a slot available for another marriage? (i.e. are they unmarried for non-polygamous people, or have they got less than the max number of spouses for polygamous people) 
-
-has_cabinet_action = <bool>
-# Checks if the character is doing something in the cabinet 
-
-art_progress = <value>
-# Checks the amount of progress an artist has made on a work of art 
-
-artist_skill = <value>
-# Checks the artist skill of the character 
-
-artist_type = <id>
-# Checks if a character is a specific type of artist 
-
-has_art_in_progress = <bool>
-# Checks if an artist is currently working on something 
-
-has_character_modifier = <key>
-# Checks if the scoped character have a given modifier
-
-has_child_education = <key>
-# Checks if the scoped child have a given education
-
-has_child_education_selected = <key>
-# Checks if the scoped child have any given education 
-
-has_dynasty = <bool>
-# Character is in a dynasty 
-
-has_estate = <estate_type>
-# Checks if a character is of a specific Estate 
-
-has_exploration = <bool>
-# Checks if character is currently exploring 
-
-has_exploration_construction = <bool>
-# Checks if character is preparing to explore
-
-has_nickname = <bool>
-# Check if the character has any nick name set 
-
-has_trait = <key>
-# Checks if a character has a specified trait 
-
-has_trait_category = <key>
-# Checks if any of the character's traits belongs to the specified category. 
-
-has_unit = <bool>
-# Checks if character is assigned to a unit 
-
-heir_position = <value>
-# Checks character's position in line for its country's throne 
-
-heir_score = <value>
-# Checks the hypothetical heir score of the character for the target country, even if the character in question could not be an heir. 
-
-heir_score_home = <value>
-# Checks the hypothetical heir score of the character in the country they currently reside in. 
-
-in_cabinet = <bool>
-# Checks if the character is in cabinet 
-
-is_admiral = <bool>
-# Checks if the character is an admiral
-
-is_admiral_of = <country>
-# Checks if character is admiral of the target country. 
-
-is_adolescent = <bool>
-# Checks if character is Adolescent 
-
-is_adult = <bool>
-# Checks if character is Adult 
-
-is_alive = <bool>
-# Checks if character is alive 
-
-is_artist = <bool>
-# Checks if character is Artist 
-
-is_artist_of = <country>
-# Checks if character is artist of the target country
-
-is_child = <bool>
-# Checks if character is Child 
-
-is_child_of = <character>
-# Checks if the character is a child of the target character? 
-
-is_close_relative = <character>
-# Checks if the character a close relative (Child, Parent, Sibling/Half-sibling, Nephew/Niece, Aunt/Uncle, Grandparent or Grandchild) of the target character? 
-
-is_consort = <bool>
-# Checks if character is Consort 
-
-is_consort_of = <country>
-# Checks if character is consort of the target country. 
-
-is_courtier = <bool>
-# Checks if character is a courtier and has no roles assigned 
-
-is_dynastic_descendant_of = <dynasty>
-#  Checks if the character is a dynastic descendant of the target dynasty? 
-
-is_dynasty_head = <bool>
-# Checks if character is DynastyHead 
-
-is_eligible_heir = <country>
-# Checks if the character can be an eligible heir for the specified country 
-
-is_eligible_heir_baseline = <country>
-# Checks if the character can be an eligible heir for the specified country without checking the heir selection law 
-
-is_eligible_military_leader = <country>
-# Checks if the character can be an eligible military leader for the specified country 
-
-is_explorer = <bool>
-# Checks if character is an explorer 
-
-is_explorer_of = <country>
-# Checks if character is explorer of the target country. 
-
-is_female = <bool>
-# Checks if character is Female 
-
-is_general = <bool>
-# Checks if character is a general 
-
-is_general_of = <country>
-# Checks if character is general of the target country. 
-
-is_heir = <bool>
-# Checks if character is Heir 
-
-is_heir_of = <country>
-# Checks if character is heir of the target country. 
-
-is_immortal = <bool>
-# Checks if character is immortal 
-
-is_infant = <bool>
-# Checks if character is Infant 
-
-is_loyal = <bool>
-# Checks if character is loyal to their ruler 
-
-is_married = <bool>
-# Checks if character is Married
-
-is_matrilineal_descendant_of = <dynasty>
-# Checks if the character is a dynastic descendant of the target dynasty via a matrilineal line
-
-is_mercenary_leader = <bool>
-# Checks if character is a mercenary leader 
-
-is_mercenary_of = <country>
-# Checks if character is mercenary of the target country. 
-
-is_parent_of = <character>
-# Checks if the character is a parent of the target character? 
-
-is_patrilineal_descendant_of = <dynasty>
-# Checks if the character is a dynastic descendant of the target dynasty via a patrilineal line
-
-is_pregnant = <bool>
-# Checks if character is Pregnant 
-
-is_regent = <bool>
-# Checks if character is Regent 
-
-is_regent_of = <country>
-# Checks if character is regent of the target country. 
-
-is_religious_figure = <bool>
-# Checks if character is religious figure 
-
-is_ruler = <bool>
-# Checks if character is Ruler 
-
-is_ruler_of = <country>
-# Checks if character is ruler of the target country.
-
-is_saint = <bool>
-# Checks if a character is a saint in any religion 
-
-is_saint_of = <religion>
-# Checks if a character is a saint in the specific religion 
-
-is_same_gender = <character>
-# Checks if the character is same gender as target character? 
-
-is_sibling_of = <character>
-# Checks if the character is a sibling of the target character? 
-
-is_spouse_of = <character>
-# Checks if the character is a spouse of the target character? 	
-
-is_valid_for_exploration = <bool>
-# Checks if character is valid for an exploration 
-
-num_of_children = <value>
-# Checks the number of children of the character 
-
-num_of_spouses = <value>
-# Checks the number of spouses of the character 
-
-num_of_traits = <value>
-# Checks the number of traits the character has 
-
-modifier_utility = <key>
-# Checks the AI utility of a modifier 
-
-modifier_utility_include_locations = <key>
-# Checks the AI utility of a modifier with location checks 	
-
-religious_figure_type = <key>
-# Checks if a character is a specific type of religious figure 
-
-ruled_country_on_or_after = <date>
-# Checks if the character ruled the country on or after a given date? 
-
-valid_estate_for_heir_selection = <heir_selection>
-# Checks if the character's estate is allowed for the target heir selection 
-
-num_of_traits_of_category = {
-    type = <trait_category>
-    value = <integer>
-}
-# The number of traits of a specified category the character has. 
-
-add_static_modifier_utility = {
-    modifier = <key>
-    value = <script_value>
-}
-# Checks the AI utility of adding a static modifier to the scoped object 
-
-remove_static_modifier_utility = {
-    modifier = <key>
-    value = <script_value>
-}
-# Checks the AI utility of removing a static modifier from the scoped object 
-
 #--------------------------------------------------------------------------------
 # Scope: Country
 #--------------------------------------------------------------------------------
@@ -755,6 +26,9 @@ has_character_modifier = <key>
 has_cooldown = <key>
 # Does a country have a particular cooldown active 
 
+tag = <country>
+# Is the scoped country the specific country tag; does NOT accept scopes
+
 has_or_had_tag = <tag>
 # Is the scoped country the specific historical tag or was ever it; does NOT accept scopes 
 
@@ -770,8 +44,20 @@ is_player_playstyle = <type>
 is_real_country = <bool>
 # Checks if a country is a real country as opposed to rebels, mercenaries, pirates 
 
-is_rebel_country = <bool>
-# Checks if a country is a rebel country created from a civil war 
+player_proficiency = <type>
+# Is player proficiency equal to NOVICE, EXPERIENCED, ADVANCED or EXPERT? 
+
+player_proficiency_greater = <type>
+# Is player proficiency greater than NOVICE, EXPERIENCED, ADVANCED or EXPERT? 
+
+player_proficiency_greater_eq = <type>
+# Is player proficiency greater or equal to NOVICE, EXPERIENCED, ADVANCED or EXPERT? 
+
+player_proficiency_less = <type>
+# Is player proficiency less than NOVICE, EXPERIENCED, ADVANCED or EXPERT? 
+
+player_proficiency_less_eq = <type>
+# Is player proficiency less or equal to NOVICE, EXPERIENCED, ADVANCED or EXPERT? 
 
 can_do_generic_action = {
     generic_action = <action>
@@ -788,6 +74,12 @@ add_static_modifier_utility = {
 }
 # Checks the AI utility of adding a static modifier to the scoped object 
 
+remove_static_modifier_utility = {
+    modifier = <key>
+    value = <script_value>
+}
+# Checks the AI utility of removing a static modifier from the scoped object 
+
 location_progress_for_formable = {
     formable_country = <formable scope>
     value = <value>
@@ -802,6 +94,14 @@ long_term_trigger_currency_utility = {
     value >= <script_value>
 }
 # Checks the AI utility of adding an amount of a certain trigger every month to the scoped object 
+
+short_term_trigger_currency_utility = {
+    trigger = <trigger>
+    size = <size>
+    target = <optional target>
+    value >= <script_value>
+}
+# Checks the AI utility of adding an amount of a certain trigger to the scoped object 
 
 # ----- Geopolitics -----
 great_power_ranking = <value>
@@ -837,12 +137,14 @@ is_historical_rival_of = <country>
 is_rival_of = <country>
 # Is the country a rival of a specified country?
 
-# ----- Revolution -----
-is_revolution_target = <bool>
-# Check if the country is the target of the revolution 
+num_possible_rivals = <value>
+# Checks if a country has a certain amount of possible rivals 
 
-is_revolutionary = <bool>
-# Check if the country is revolutionary 
+num_rivals = <value>
+# Checks if a country has a certain amount of rivals 
+
+power_projection = <value>
+# Checks if a country has a power projection 
 
 # ----- Governance -----
 government_power = <value>
@@ -851,14 +153,32 @@ government_power = <value>
 government_power_percentage = <value>
 # How high the percentage of the current government power compared to the maximum does the country/IO have? 
 
+uses_government_power = <key>
+# Checks if a country has a certain government_power (e.g. 'legitimacy') 
+
+prestige = <value>
+# How much prestige does the country/IO have? 
+
+prestige_percentage = <value>
+# How high the percentage of the current prestige compared to the maximum does the country/IO have? 
+
 has_reform = <government_reform>
 # Checks if a country has a specific reform 
 
 has_regular_elections = <bool>
 # does the country have regular elections 
 
+societal_value_progress = <value>
+# Gets progress towards societal value 
+
 has_societal_value = <societal_value_type>
 # Checks if the country has a specific societal value 
+
+num_open_reform_slots = <value>
+# Checks if a country has a certain amount of open government reform slots 
+
+num_reforms = <value>
+# Checks if a country has a certain amount of government reforms 
 
 legitimacy = <value>
 # How much legitimacy does the country/IO have? 
@@ -866,11 +186,17 @@ legitimacy = <value>
 legitimacy_percentage = <value>
 # How high the percentage of the current legitimacy compared to the maximum does the country/IO have? 
 
-honor = <value>
-# How much honor does the country/IO have? 
+republican_tradition = <value>
+# How much republican_tradition does the country/IO have? 
 
-honor_percentage = <value>
-# How high the percentage of the current honor compared to the maximum does the country/IO have? 
+republican_tradition_percentage = <value>
+# How high the percentage of the current republican_tradition compared to the maximum does the country/IO have? 
+
+devotion = <value>
+# How much devotion does the country/IO have? 
+
+devotion_percentage = <value>
+# How high the percentage of the current devotion compared to the maximum does the country/IO have? 
 
 horde_unity = <value>
 # How much horde_unity does the country/IO have? 
@@ -878,23 +204,140 @@ horde_unity = <value>
 horde_unity_percentage = <value>
 # How high the percentage of the current horde_unity compared to the maximum does the country/IO have? 
 
+tribal_cohesion = <value>
+# How much tribal_cohesion does the country/IO have? 
+
+tribal_cohesion_percentage = <value>
+# How high the percentage of the current tribal_cohesion compared to the maximum does the country/IO have?
+
+honor = <value>
+# How much honor does the country/IO have? 
+
+honor_percentage = <value>
+# How high the percentage of the current honor compared to the maximum does the country/IO have? 
+
+yanantin = <value>
+# How much yanantin does the country/IO have? 
+
+yanantin_percentage = <value>
+# How high the percentage of the current yanantin compared to the maximum does the country/IO have? 
+
+karma = <value>
+# How much karma does the country/IO have? 
+
+karma_percentage = <value>
+# How high the percentage of the current karma compared to the maximum does the country/IO have? 
+
+doom = <value>
+# How much doom does the country/IO have? 
+
+doom_percentage = <value>
+# How high the percentage of the current doom compared to the maximum does the country/IO have? 
+
+harmony = <value>
+# How much harmony does the country/IO have? 
+
+harmony_percentage = <value>
+# How high the percentage of the current harmony compared to the maximum does the country/IO have? 
+
 # ----- Administration -----
+owns = <location>
+# Does the country own a specific location? 
+
+own_entire_area = <area>
+# Does the country own all locations in area? 
+
+own_entire_province = <province_definition>
+# Does the country own all locations in province? 
+
+owns_any_foreign_buildings_in = <country>
+# Does the country own any foreign buildings in the target country? 
+
+owns_or_non_sovereign_subject_owns = <location>
+# Does the country or any of its direct non-sovereign subjects own a specific location? 
+
 controls = <location>
 # Does the country control a specific location? 
 
-average_control_in_home_region = <value>
-# Checks the average control in the home region 
+self_control = <value>
+# How much self control does the country/IO have? 
+
+self_control_percentage = <value>
+# How high the percentage of the current self control compared to the maximum does the country/IO have? 
 
 has_core = <location>
 # Does the country has a core of a specific location? 
 
+num_locations = <value>
+# Checks if a country has a certain amount of owned locations 
+
+num_provinces = <value>
+# Checks if a country has a certain amount of provinces 
+
+num_locations_owned_or_owned_by_subjects = <value>
+# Checks if a country or its direct subjects has a certain amount of owned locations 
+
+num_locations_owned_or_owned_by_subjects_or_below = <value>
+# Checks if a country, its subjects or its subjects' subjects has a certain amount of owned locations 
+
+num_of_locations_owned_by_io = <value>
+# Checks if a country has an amount of locations owned by certain IO 
+
+num_of_non_rural = <value>
+# Checks if a country has an amount of towns and cities
+
+has_ports = <bool>
+# country has ports? 
+
+num_of_non_rural_ports = <value>
+# Checks if a country has an amount of non-rural ports
+
+num_of_ports = <value>
+# Checks if a country has an amount of ports 
+
 has_presence_in = <?>
 # Country has a presence in the geography supplied? 
+
+average_control_in_home_region = <value>
+# Checks the average control in the home region 
 
 has_sound_tolls = <bool>
 # country has sound tolls 
 
+# ----- Instability -----
+stability = <value>
+# How much Stability does the country/IO have?
+
+stability_percentage = <value>
+# How high the percentage of the current Stability compared to the maximum does the country/IO have? 
+
+is_rebel_country = <bool>
+# Checks if a country is a rebel country created from a civil war 
+
+num_rebels = <value>
+# Checks if a country has a certain amount of Rebels
+
+in_civil_war = <bool>
+# country is in civil war 
+
+is_revolution_target = <bool>
+# Check if the country is the target of the revolution 
+
+is_revolutionary = <bool>
+# Check if the country is revolutionary 
+
+supports_rebel = <key>
+# Checks if a country supports the target rebel 
+
+spy_network = {
+    target = <country>
+    value = <value> | value = { <min> <max> }
+}
+
 # ----- Pops -----
+total_development = <value>
+# Gets the total amount of development in the country 
+
 average_country_literacy = <value>
 # Checks if a country has a certain average_literacy
 
@@ -907,11 +350,41 @@ can_build_building = <building_type>
 has_employment_system = <key>
 # Does the country has the supplied employment system? 
 
+total_population = <value>
+#  	Checks if a country has a certain population 
+
+pop_type_percentage_in_country = <value>
+# The percentage of the specific pop type in the current country 
+
+pop_type_population_in_country = <value>
+# The number of the specific pop type in the current country 
+
+total_control_scaled_population = <value>
+# Checks if a country has value that is population * local_control its in 
+
+total_heathen_population = <value>
+# Checks if a country has a heathen population size of the specified value 
+
+total_heretic_population = <value>
+# Checks if a country has a heretic population size of the specified value
+
 heathen_population_fraction = <value>
 # Checks the fraction of the population having a different religious group than the country 
 
 heretic_population_fraction = <value>
 # Checks the fraction of the population having a different religion in the same group as the country 
+
+total_not_tolerated_culture_population = <value>
+# Checks if a country has an intolerated culture population size of the specified value 
+
+total_primary_culture_population = <value>
+# Checks if a country has a primary culture population size of the specified value 
+
+total_tolerated_culture_population = <value>
+# Checks if a country has a tolerated culture population size of the specified value 
+
+total_true_faith_population = <value>
+# Checks if a country has a true faith population size of the specified value 
 
 # ----- Court -----
 country_art_quality = <value>
@@ -919,6 +392,24 @@ country_art_quality = <value>
 
 court_maintenance = <value>
 # What is the xx position (0-1) the country has? 
+
+num_adult_capable_characters = <value>
+# Checks if a country has a certain amount of adult characters who can do cabinet or military stuff 
+
+num_artists = <value>
+# Checks if a country has a certain amount of artists
+
+num_works_of_art = <value>
+# Checks if a country has a certain number of works of art 
+
+upkeep_maintenance = <value>
+# What is the xx position (0-1) the country has? 
+
+used_cultures_capacity = <value>
+# Checks if a country has a certain cost of cultures accepted & tolerated 
+
+used_diplomatic_capacity = <value>
+# Diplomatic capacity used by the country
 
 # ----- Parliament -----
 can_vote_in_parliament = <key>
@@ -942,6 +433,41 @@ estate_type_allowed_in_parliament = <key>
 is_active_parliament = <bool>
 # country has an active parliament called 
 
+months_since_last_parliament_called = <value>
+# Checks how many months its been since the country / international organization last called a parliament
+
+num_of_active_parliament_agendas = <value>
+# Check how many parliament agendas are currently available to the country or international organization.
+
+parliament_issue_chance = <value>
+# The chance an issue will be selected 
+
+parliament_issue_support = <value>
+# The current support in parliament for an issue 
+
+parliament_issue_will_pass = <bool>
+# Check if the parliament issue of the country / international in debate will pass 
+
+parliament_type_is_enabled_in = <parliament_type>
+# Is a parliament type enabled in the scope country?
+
+parliament_type_is_locked_in = <parliament_type>
+# Is a parliament type locked in the scope country? 
+
+parliament_type_visible_in = <parliament_type>
+#  	Can we see a parliament type in the scope country?
+
+remaining_parliament_days = <value>
+# Checks how many days are left in the parliament of the country / international organization before it concludes. Returns -1 when there is no parliament active. 
+
+parliament_type_utility = {
+    parliament_type = <type>
+    subtract_current = <bool>
+    value = <value>
+}
+# Utility of a parliament type that can subtract the utility of current parliament modifiers 
+# Usage: parliament_type_utility(<type>|<bool>)
+
 # ----- Estate -----
 country_has_estate = <estate_type>
 # Checks if the country has the specific Estate 
@@ -963,6 +489,12 @@ has_estate_privilege = <key>
 
 is_auto_raise_taxrate_for_all_estates = <bool>
 # Check if all estates have auto raise taxrates? 
+
+num_privileges = <value>
+# Checks if the scope country or estate has a certain amount of privileges 
+
+num_possible_privileges = <value>
+# Checks if the scope country or estate has a certain amount of privileges 
 
 estate_satisfaction = {
     estate_type = <key>
@@ -993,7 +525,7 @@ add_estate_satisfaction_utility = {
 # Utility of adding however much estate satisfaction to the country 
 # add_estate_satisfaction_utility(<estate>|<amount>)
 
-# ----- Law -----
+# ----- Law / Policy -----
 discount_needed_for_law_change = <value>
 # Checks how much more discount % is needed for Ai to change a law 
 
@@ -1002,6 +534,21 @@ has_law = <law>
 
 has_policy = <policy>
 # Checks if a country has a certain policy for a then policy's law 
+
+ai_policy_resolution_keep_bias = ?
+#
+
+ai_policy_reason_to_join = ?
+#
+
+policy_has_ai_vote_value = ?
+#
+
+policy_has_ai_keep_value = ?
+#
+
+policy_has_ai_join_reason = ?
+#
 
 # ----- Technology -----
 can_research_advance  = <key>
@@ -1028,7 +575,31 @@ knows_about_institution = <key>
 military_tech_level = <value>
 # Checks if a country has a certain level of military tech 
 
+num_embraced_institutions = <value>
+# Checks if a country has a certain number of institutions embraced 
+
+num_known_institutions = <value>
+# Checks if a country knows a certain number of institutions 
+
+num_of_advances_researched = <value>
+# Checks how many advances a country currently has researched. 
+
+research_progress = <value>
+# Checks the progress of the current research in the country 
+
 # ----- Economy -----
+monthly_balance = <value>
+# Checks the monthly balance of a country 
+
+monthly_income_total = <value>
+# Checks if a country has a certain income 
+
+monthly_income_trade_and_tax = <value>
+# Checks if a country has a certain trade and tax income
+
+monthly_trade_income = <value>
+# Checks if a country has a certain income from trade 
+
 country_tax_base = <value>
 # Checks the total tax base of a country 
 
@@ -1049,6 +620,9 @@ gold = <value>
 
 gold_percentage = <value>
 # How high the percentage of the current gold compared to the maximum does the country/IO have? 
+
+yearly_gold = <value>
+# How much gold does the country get per year? 
 
 higher_temporary_taxes_needed = <value>
 # Checks how much more max tax a country wants 
@@ -1073,6 +647,38 @@ is_embargoed_by = <country>
 
 is_embargoing = <country>
 # Is the country embargoing the specified country? 	
+
+num_loans = <value>
+# Checks if a country has a certain amount of loans 
+
+num_of_markets_with_merchants = <value>
+# Checks if a country has merchants in the specified amount of markets.
+
+num_of_trades = <value>
+# Checks if a country has an amount of trades active
+
+slider_minting_value = <value>
+# How much minting is going on (0..1) 
+
+total_debt = <value>
+# Checks how much a country has in total debt 
+
+total_merchant_capacity = <value>
+# Checks if a country has a certain total merchant capacity
+
+total_effective_goods_production_buildings  = {
+    goods = <goods>
+    value = <value>
+}
+# Returns the number of effective building levels which produce the specified good. 
+
+relocate_market_utility = {
+    location = <location>
+    new_location = <location>
+    value = <threshold>
+}
+# Utility of relocating a market
+# Usage: relocate_market_utility(<location>,<location>)
 
 employment_system_desire = {
     target = <key>
@@ -1127,11 +733,26 @@ has_regent = <bool>
 has_ruler = <bool>
 # country has a ruler 
 
+num_characters = <value>
+# Checks if a country has a certain amount of living characters 
+
 heir_score_country = <value>
 # Get the hypothetical heir score of the target character for the current country, even if the character in question could not be an heir. 
 
 is_regency_extended = <bool>
 # country has an extended regency?
+
+ruler_reign = <value>
+# Checks if the ruler of a country has ruled for x years 
+
+ruler_reign_in_days = <value>
+# Checks if the ruler or regent of a country has ruled for x days 
+
+ruler_term_start_date = <date>
+# Gets the start date of the current ruler term 
+
+total_dynastic_power = <value>
+# Check the total amount of dynastic power the scoped dynasty or country has. In case of country, the dynasty of the ruler or of the heir in case of regency is taken. 
 
 dynastic_power = {
     international_organization = <key>
@@ -1141,6 +762,12 @@ dynastic_power = {
 # dynastic_power(<key>)
 
 # ----- Diplomacy -----
+num_of_diplomats = <value>
+# Checks if a country has an amount of diplomats 
+
+num_subjects = <value>
+# Checks the total number of subjects of a country 
+
 at_war = <bool>
 # Checks if a country is at war 
 
@@ -1177,6 +804,21 @@ gives_isolation_exemption_to = <country>
 gives_military_access_to = <country>
 # Does the scope country give military access to the specified country? 
 
+receives_fleet_basing_rights_from = <country>
+# Does the scope country receive fleet basing rights from the specified country? 
+
+receives_food_access_from = <country>
+# Does the scope country receive food access from the specified country? 
+
+receives_isolation_exemption_from = <country>
+# Does the scope country receive a trade isolation exemption from the specified country? 
+
+receives_military_access_from = <country>
+# Does the scope country receive military access from the specified country? 
+
+wants_military_access_in = <country>
+# country wants military access in this other country? 
+
 giving_scripted_relation_of_type = <key>
 # Checks if that scripted relation is given by the country scope to any other country.
 
@@ -1206,6 +848,9 @@ has_royal_marriage_with = <country>
 
 has_scripted_relation_of_type = <relation_type>
 # Checks if that scripted relation exists for the country scope with any other country. 
+
+receiving_scripted_relation_of_type = <relation_type>
+# Checks if that scripted relation is received by the country scope from any other country. 
 
 has_trust = <trust_type>
 # does the country have a trust type towards another country? 
@@ -1249,6 +894,62 @@ knows_country = <country>
 liberty_desire = <value>
 # Checks the amount of liberty desire a country has 
 
+num_relations_above_limit = <value>
+# Amount above relations limit 
+
+relevant_countries = <country>
+# Do we have any diplomatic action with the target country?
+
+subject_loyalty = <value>
+# Checks a country's subject loyalty 
+
+subjects_relative_power = <value>
+# Compares to relative power of all subjects combined 
+
+this_opinion_of_prev = <value>
+# Gets the current scope country's opinion of the previous scope country 
+
+this_trust_of_prev = <value>
+# Gets the current scope country's trust of the previous scope country 
+
+wants_opinion_with = <country>
+# Does country want more opinion with another nation? Only for Ai 
+
+wants_to_give_away_any_province = <bool>
+# Country wants to give any province to a subject? 
+
+wants_to_subjugate = <country>
+# country wants to subjugate another country? 
+
+within_diplomatic_range = <country>
+# Is the target country within diplomatic range? 
+
+trust = {
+    target = <country>
+    value = <value> | value = { <min> <max> }
+}
+# Is the country's trust towards the target greater or equal than the value? 
+
+opinion = {
+    target = <country>
+    value = <value> | value = { <min> <max> }
+}
+# is the country's opinion of the target greater or equal than the value? 
+
+opinion_difference_between = {
+    first = <country>
+    second = <country>
+    value = <value>
+}
+# Get the opinion of the current country scope against the first target country and subtract it with the opinion the current scope has of the second country. 
+# Usage: opinion_difference_between(<country>|<country>)
+
+needs_opinion_with = {
+    target = <country>
+    value = <value>
+}
+# Determines if a country needs X more relations with another nation. 
+
 has_scripted_relation = {
     target = <country>
     type = <scripted type>
@@ -1266,6 +967,12 @@ giving_scripted_relation = {
     type = <key>
 }
 # Checks for giving scripted relation. 
+
+receiving_scripted_relation = {
+    target = <country>
+    type = <key>
+}
+# Checks for receiving scripted relation. 
 
 favors = {
     target = <scope>
@@ -1285,7 +992,15 @@ country_interaction_acceptance = {
     value = <value>
 }
 # How high is the target country's AI value of accepting the country interaction done by the current country scope? Always return 0 if the target is a player 
-# country_interaction_acceptance(<country interaction>|<country>)
+# Usage: country_interaction_acceptance(<country interaction>|<country>)
+
+reverse_country_interaction_acceptance  = {
+    type = <country interaction>
+    target = <country>
+    value = <value>
+}
+# How high is the current country's AI value of accepting the country interaction done by the specified country scope? Always return 0 if the scope is a player 
+# Usage: reverse_country_interaction_acceptance(<country interaction>|<country>)
 
 can_make_subject_of = {
     target = <country>
@@ -1301,7 +1016,19 @@ has_diplomacy_with = {
 }
 # Does the country have a certain type of diplomatic relation with another. 
 
+union_length_days = {
+    target = <country>
+    value = <value>
+}
+# Returns the number of days a country has been in a union with the target country. 
+
 # ----- War Diplomacy -----
+war_exhaustion = <value>
+# How much WarExhaustion does the country/IO have? 
+
+war_exhaustion_percentage = <value>
+# How high the percentage of the current WarExhaustion compared to the maximum does the country/IO have? 
+
 can_declare_no_cb_war_on = <country>
 # Can the country declare a war without any casus belli on the target country? 
 
@@ -1313,6 +1040,9 @@ can_join_defensive_war_with = <country>
 
 can_join_offensive_war_with  = <country>
 # Can the country join in an offensive war with the scope country? 
+
+offensive_alliance_strength = <value>
+# Strength of an offensive alliance, including the nation with all countries giving offensive support and those that can be called in for offensive wars
 
 defensive_alliance_strength = <value>
 # Strength of a defensive alliance, including the nation with all countries giving defensive support and those that can be called in for defensive wars 
@@ -1394,6 +1124,53 @@ is_war_leader_of = <war>
 
 lowest_war_score = <value>
 # Checks the lowest war score of ongoing wars 
+
+months_since_peace = <value>
+# Checks how many months its been since a country was at peace 
+
+months_since_war = <value>
+# Checks how many months its been since a country was at War 
+
+prev_antagonism_towards_this = <value>
+# Gets the previous scope country's antagonism towards the current scope country 
+
+prev_opinion_of_this = <value>
+# Gets the previous scope country's opinion of the current scope country 
+
+prev_trust_of_this = <value>
+# Gets the previous scope country's trust of the current scope country 
+
+this_antagonism_towards_prev = <value>
+# Gets the current scope country's antagonism towards the previous scope country 
+
+wants_casus_belli_with = <country>
+# Does country want a casus belli with another nation? Only for Ai 
+
+war_enthusiasm = {
+    war = <war>
+    value = <value>
+}
+# The war enthusiasm of the current country scope in the target war. 
+# Usage: war_enthusiasm(<war scope>)
+
+war_score_in_war = {
+    war = <war>
+    value = <value>
+}
+# Check how much war score the current country has in the target war. 
+
+war_score_versus = {
+    target = <country>
+    value = <value>
+}
+# Gets the war score of the scope country against the supplied one 
+
+threat_level_to = {
+    country = <country>
+    value = <value>
+}
+# Return the threat level the scope country has towards the target country scope. 
+# Usage: threat_level_to(<country scope>)
 
 is_creating_cb_of_type = {
     target = <country>
@@ -1495,7 +1272,19 @@ is_dominant_country_of = <culture>
 language_percentage_in_country = <value>
 # The percentage of speakers of a specific language in the current country 
 
+proper_culture_nobles = <value>
+# Checks the proportion of your population that is primary or accepted culture nobles 
+
+total_accepted_culture_population = <value>
+# Checks if a country has an acceputed or primary culture population size of the specified value
+
 # ----- Religion -----
+righteousness = <value>
+# How much righteousness does the country/IO have? 
+
+righteousness_percentage = <value>
+# How high the percentage of the current righteousness compared to the maximum does the country/IO have? 
+
 active_religious_focus = <key>
 # Checks if a country is researching a certain religious focus 
 
@@ -1504,24 +1293,6 @@ has_completed_religious_focus = <key>
 
 can_see_religious_aspect = <religious_aspect>
 # Checks if the input religious aspect is visible for the country in scope. 
-
-devotion = <value>
-# How much devotion does the country/IO have? 
-
-devotion_percentage = <value>
-# How high the percentage of the current devotion compared to the maximum does the country/IO have? 
-
-doom = <value>
-# How much doom does the country/IO have? 
-
-doom_percentage = <value>
-# How high the percentage of the current doom compared to the maximum does the country/IO have? 
-
-harmony = <value>
-# How much harmony does the country/IO have? 
-
-harmony_percentage = <value>
-# How high the percentage of the current harmony compared to the maximum does the country/IO have? 
 
 has_avatar = <key>
 # checks if a country has a particular avatar 
@@ -1535,11 +1306,47 @@ has_religious_aspect = <religious_aspect>
 is_religious_aspect_enabled = <religious_aspect>
 # Checks if the input religious aspect is enabled for the country in scope. Meaning if the allow trigger in religious aspect DB object returns true. 
 
-karma = <value>
-# How much karma does the country/IO have? 
+num_avatars = <value>
+# Checks if a country has a certain amount of avatars
 
-karma_percentage = <value>
-# How high the percentage of the current karma compared to the maximum does the country/IO have? 
+num_cardinals = <value>
+# Checks if a country has a certain amount of Cardinals 
+
+num_of_religious_aspects = <value>
+# Gets the total amount of church aspects in the country 
+
+purity = <value>
+# How much purity does the country/IO have? 
+
+purity_percentage = <value>
+# How high the percentage of the current purity compared to the maximum does the country/IO have? 
+
+religion_group_percentage_in_country = <value>
+# The percentage of a specific religion group in the current country 
+
+religion_percentage_in_country = <value>
+# The percentage of a specific religion in the current country 
+
+religion_population_in_country = <value>
+# The number of pops with a specific religion in the current country 
+
+religious_influence = <value>
+# How much religious influence does the country/IO have? 
+
+religious_influence_percentage = <value>
+# How high the percentage of the current religious influence compared to the maximum does the country/IO have? 
+
+religious_unity = <value>
+# Checks the fraction of the population sharing the country's religion 
+
+rite_power = <value>
+# How much rite power does the country/IO have? 
+
+rite_power_percentage = <value>
+# How high the percentage of the current rite power compared to the maximum does the country/IO have? 
+
+state_religion_clergy = <value>
+# Checks the proportion of your population that is true faith clergy 
 
 # ----- Military -----
 manpower = <value>
@@ -1548,11 +1355,32 @@ manpower = <value>
 manpower_percentage = <value>
 # Checks the percentage of manpower a country has compared to its maximum 
 
+yearly_manpower = <value>
+# How many Manpower does the country get per year? 
+
 max_manpower = <value>
 # Checks if a country has a certain Max manpower 
 
+sailors = <value>
+# How much Sailors does the country/IO have? 
+
+sailors_percentage = <value>
+# Checks the percentage of Sailors a country has compared to its maximum 
+
+yearly_sailors = <value>
+# How many Sailors does the country get per year? 
+
 max_sailors = <value>
 # Checks if a country has a certain Max Sailors 
+
+monthly_manpower = <value>
+# Checks if a country has a certain monthly manpower
+
+monthly_sailors = <value>
+# Checks if a country has a certain monthly Sailors 
+
+num_regiments = <value>
+# Checks if a country has a certain amount of regiments 
 
 military_strength = <value>
 # Checks the total military strength (max manpower, army size, levy power) of a country 
@@ -1605,9 +1433,6 @@ expected_army_size = <value>
 expected_navy_size = <value>
 # Checks if a country expects to have a certain amount of ships 
 
-has_ports = <bool>
-# country has ports? 
-
 has_raised_army_levies = <bool>
 # Check if the country has raised army levies 
 
@@ -1620,8 +1445,44 @@ has_raised_navy_levies = <bool>
 has_unlocked_any_unit_of_category = <unit_category>
 # Has the country unlocked any unit of the specified category? 
 
-in_civil_war = <bool>
-# country is in civil war 
+naval_range = <value>
+# The naval range of the country 
+
+navy_maintenance = <value>
+# What is the xx position (0-1) the country has? 
+
+navy_size = <value>
+# Checks if a country has a certain amount of ships 
+
+navy_size_percentage = <value>
+# Checks if a country has a certain percentage of ships compared to expected size 
+
+navy_tradition = <value>
+# How much navy tradition does the country/IO have?
+
+navy_tradition_percentage = <value>
+# How high the percentage of the current navy tradition compared to the maximum does the country/IO have? 
+
+num_forts = <value>
+# Checks if a country has a certain amount of forts 
+
+possible_military_leaders = <value>
+# Checks if a country has a certain amount of possible military leaders 
+
+regular_army_size = <value>
+# Checks if a country has a certain army size of regulars (maximum strength)
+
+relative_military_strength = {
+    target = <country>
+    value = <value> | value = { <min> <max> }
+}
+# calculates the relative military strength of the scope country to the target. 
+
+relative_strength = {
+    target = <country>
+    value = <value>
+}
+# Gets the relative strength of the scope country to the supplied one 
 
 # ----- Colonial -----
 exploration_maintenance = <value>
@@ -1668,6 +1529,12 @@ is_discovered_by = <country>
 
 is_valid_colonial_charter = <province_definition>
 # Is this colonial charter valid, or blocked by a recognised claim? 
+
+num_colonial_charters = <value>
+# Checks if a country has a certain amount of colonial charters 
+
+num_explorations = <value>
+# Checks if a country has a certain amount of Explorations
 
 exploration_utility = {
     area = <area>
@@ -1758,6 +1625,61 @@ is_neighbor_of_international_organization = <io>
 is_target_of_international_organization_of_type = <io_type>
 # Is the country a target of an international organization of the specified type? 
 
+resolution_opinion = {
+     international_organization = <international organization> 
+     resolution = <resolution> 
+     vote = <vote scope> 
+     value = <value>
+}
+# Gets the current scope country's opinion of a resolution. 
+# Usage: resolution_opinion(<IO>|<resolution>|<vote>)
+
+years_in_international_organization = {
+    country = <country>
+    value = <value>
+}
+# Checks if the country has been in the current international organization scope for x years. 
+
+vote_impact_in_resolution = {
+    international_organization = <io>
+    resolution = <key>
+    value = <value>
+}
+# Check how much vote impact the current country scope would make when voting in the target resolution of the target IO. 
+
+vote_percentage_impact_in_resolution  = {
+    international_organization = <io>
+    resolution = <key>
+    value = <value>
+}
+# Check how much vote percentage impact the current country scope would make when voting in the target resolution of the target IO. 
+
+total_population_in_international_organization  = {
+    international_organization = <io>
+    value = <value>
+}
+# Checks if the country has the defined amount of pops in the target IO. 
+# Usage: total_population_in_international_organization(<IO>)
+
+total_population_in_international_organization_percentage = {
+    international_organization = <io>
+    value = <value>
+}
+# Checks if the country has the defined amount of pops in the target IO. 
+# Usage: total_population_in_international_organization_percentage(<IO>)
+
+payment_contribution = {
+    international_organization = <io>
+    payment = <payment_type>
+}
+# Gets how much the country has to pay for the specified IO and payment type. 
+
+payment_maintenance = {
+    international_organization = <io>
+    payment = <payment_type>
+}
+# Gets the payment maintenance level for a country in an international organization. 
+
 join_organization_ai_desire = {
     international_organization = <io>
     value = <value>
@@ -1843,64 +1765,11 @@ has_any_mission_active = <bool>
 has_mission_task = <mission_task>
 # Checks if the country has the specified mission task visible in its current mission. 
 
-#--------------------------------------------------------------------------------
-# Scope: Culture
-#--------------------------------------------------------------------------------
+mission_completed = <mission>
+# Checks if the country has completed the mission. 
 
-#--------------------------------------------------------------------------------
-# Scope: Religion
-#--------------------------------------------------------------------------------
-has_religion_modifier = <key>
-# Does the scoped religion have a given modifier 
+mission_task_bypassed = <mission_task>
+# Checks if the country has bypassed the mission task. 
 
-#--------------------------------------------------------------------------------
-# Scope: Goods
-#--------------------------------------------------------------------------------
-
-#--------------------------------------------------------------------------------
-# Scope: Institution
-#--------------------------------------------------------------------------------
-
-#--------------------------------------------------------------------------------
-# Scope: International Organization
-#--------------------------------------------------------------------------------
-has_international_organization_modifier = <key>
-# Checks if the scoped international organization have a given modifier 
-
-
-#--------------------------------------------------------------------------------
-# Scope: Province 
-#--------------------------------------------------------------------------------
-has_province_modifier = <key>
-# Does the scoped province have a given modifier 
-
-#--------------------------------------------------------------------------------
-# Scope: Location 
-#--------------------------------------------------------------------------------
-has_location_modifier = <key>
-# Checks if the scoped province have a given modifier
-
-
-#--------------------------------------------------------------------------------
-# Scope: Market
-#--------------------------------------------------------------------------------
-
-#--------------------------------------------------------------------------------
-# Scope: Pop
-#--------------------------------------------------------------------------------
-
-#--------------------------------------------------------------------------------
-# Scope: War
-#--------------------------------------------------------------------------------
-
-#--------------------------------------------------------------------------------
-# Scope: Unit
-#--------------------------------------------------------------------------------
-has_unit_modifier = <key>
-# Does the scoped unit have a given modifier 
-
-#--------------------------------------------------------------------------------
-# Scope: Mercenary
-#--------------------------------------------------------------------------------
-has_mercenary_modifier = <key>
-# Checks if the scoped mercenary have a given modifier 
+mission_task_completed = <mission_task> 
+# Checks if the country has completed the mission task.

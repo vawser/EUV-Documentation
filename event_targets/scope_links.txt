@@ -292,6 +292,9 @@ pop_type -> pop_type
 rebel -> rebels 
 # Scope to the rebel group that this pop is attached to.
 
+dialect -> dialect
+# Scope to the dialect this pop has.
+
 #----------------------
 # Scope: War
 #----------------------

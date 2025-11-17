@@ -1,0 +1,11 @@
+#-----------------------------------
+# Comparison Types
+#-----------------------------------
+Less Than: <
+Less Than or Equal: <=
+Equals: =
+Not Equals: !=
+Greater Than: >
+Greater Than or Equal: >=
+
+For value comparisons, these comparitors can be used. 

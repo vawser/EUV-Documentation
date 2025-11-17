@@ -1,0 +1,290 @@
+#--------------------------------------------------------------------------------
+# Scope: Character
+#--------------------------------------------------------------------------------
+adm = <value>
+# Checks the administrative ability of the character 
+
+dip = <value>
+# Checks the diplomatic ability of the character 
+
+mil = <value>
+# Checks the military ability of the character 
+
+total_abilities = <value>
+# Checks the total ability of the character 
+
+education = <key>
+# Checks if a character has a specific education 
+
+fertility = <value>
+# Checks the fertility of the character 
+
+yearly_salary = <value>
+# Checks the yearly salary of the character 
+
+age_in_days = <value>
+# Checks the age of the character in days
+
+age_in_years = <value>
+# Checks the age of the character in years
+
+can_serve_in_cabinet_of = <country> 
+# Checks if the character can serve in the cabinet of the target country 
+
+character_name = <key>
+# Checks if the character has the same name key as their first name. 
+
+character_nickname = <key>
+# Check if the character has the same name key as their nickname 
+
+gfx_culture_applicable = <key>
+# Checks if a culture gfx applies to the scope object 
+
+has_available_marriage_slot = <bool>
+# Checks if the character has a slot available for another marriage? (i.e. are they unmarried for non-polygamous people, or have they got less than the max number of spouses for polygamous people) 
+
+has_cabinet_action = <bool>
+# Checks if the character is doing something in the cabinet 
+
+art_progress = <value>
+# Checks the amount of progress an artist has made on a work of art 
+
+artist_skill = <value>
+# Checks the artist skill of the character 
+
+artist_type = <id>
+# Checks if a character is a specific type of artist 
+
+has_art_in_progress = <bool>
+# Checks if an artist is currently working on something 
+
+has_character_modifier = <key>
+# Checks if the scoped character have a given modifier
+
+has_child_education = <key>
+# Checks if the scoped child have a given education
+
+has_child_education_selected = <key>
+# Checks if the scoped child have any given education 
+
+has_dynasty = <bool>
+# Character is in a dynasty 
+
+has_estate = <estate_type>
+# Checks if a character is of a specific Estate 
+
+has_exploration = <bool>
+# Checks if character is currently exploring 
+
+has_exploration_construction = <bool>
+# Checks if character is preparing to explore
+
+has_nickname = <bool>
+# Check if the character has any nick name set 
+
+has_trait = <key>
+# Checks if a character has a specified trait 
+
+has_trait_category = <key>
+# Checks if any of the character's traits belongs to the specified category. 
+
+has_unit = <bool>
+# Checks if character is assigned to a unit 
+
+heir_position = <value>
+# Checks character's position in line for its country's throne 
+
+heir_score = <value>
+# Checks the hypothetical heir score of the character for the target country, even if the character in question could not be an heir. 
+
+heir_score_home = <value>
+# Checks the hypothetical heir score of the character in the country they currently reside in. 
+
+in_cabinet = <bool>
+# Checks if the character is in cabinet 
+
+is_admiral = <bool>
+# Checks if the character is an admiral
+
+is_admiral_of = <country>
+# Checks if character is admiral of the target country. 
+
+is_adolescent = <bool>
+# Checks if character is Adolescent 
+
+is_adult = <bool>
+# Checks if character is Adult 
+
+is_alive = <bool>
+# Checks if character is alive 
+
+is_artist = <bool>
+# Checks if character is Artist 
+
+is_artist_of = <country>
+# Checks if character is artist of the target country
+
+is_child = <bool>
+# Checks if character is Child 
+
+is_child_of = <character>
+# Checks if the character is a child of the target character? 
+
+is_close_relative = <character>
+# Checks if the character a close relative (Child, Parent, Sibling/Half-sibling, Nephew/Niece, Aunt/Uncle, Grandparent or Grandchild) of the target character? 
+
+is_consort = <bool>
+# Checks if character is Consort 
+
+is_consort_of = <country>
+# Checks if character is consort of the target country. 
+
+is_courtier = <bool>
+# Checks if character is a courtier and has no roles assigned 
+
+is_dynastic_descendant_of = <dynasty>
+#  Checks if the character is a dynastic descendant of the target dynasty? 
+
+is_dynasty_head = <bool>
+# Checks if character is DynastyHead 
+
+is_eligible_heir = <country>
+# Checks if the character can be an eligible heir for the specified country 
+
+is_eligible_heir_baseline = <country>
+# Checks if the character can be an eligible heir for the specified country without checking the heir selection law 
+
+is_eligible_military_leader = <country>
+# Checks if the character can be an eligible military leader for the specified country 
+
+is_explorer = <bool>
+# Checks if character is an explorer 
+
+is_explorer_of = <country>
+# Checks if character is explorer of the target country. 
+
+is_female = <bool>
+# Checks if character is Female 
+
+is_general = <bool>
+# Checks if character is a general 
+
+is_general_of = <country>
+# Checks if character is general of the target country. 
+
+is_heir = <bool>
+# Checks if character is Heir 
+
+is_heir_of = <country>
+# Checks if character is heir of the target country. 
+
+is_immortal = <bool>
+# Checks if character is immortal 
+
+is_infant = <bool>
+# Checks if character is Infant 
+
+is_loyal = <bool>
+# Checks if character is loyal to their ruler 
+
+is_married = <bool>
+# Checks if character is Married
+
+is_matrilineal_descendant_of = <dynasty>
+# Checks if the character is a dynastic descendant of the target dynasty via a matrilineal line
+
+is_mercenary_leader = <bool>
+# Checks if character is a mercenary leader 
+
+is_mercenary_of = <country>
+# Checks if character is mercenary of the target country. 
+
+is_parent_of = <character>
+# Checks if the character is a parent of the target character? 
+
+is_patrilineal_descendant_of = <dynasty>
+# Checks if the character is a dynastic descendant of the target dynasty via a patrilineal line
+
+is_pregnant = <bool>
+# Checks if character is Pregnant 
+
+is_regent = <bool>
+# Checks if character is Regent 
+
+is_regent_of = <country>
+# Checks if character is regent of the target country. 
+
+is_religious_figure = <bool>
+# Checks if character is religious figure 
+
+is_ruler = <bool>
+# Checks if character is Ruler 
+
+is_ruler_of = <country>
+# Checks if character is ruler of the target country.
+
+is_saint = <bool>
+# Checks if a character is a saint in any religion 
+
+is_saint_of = <religion>
+# Checks if a character is a saint in the specific religion 
+
+is_same_gender = <character>
+# Checks if the character is same gender as target character? 
+
+is_sibling_of = <character>
+# Checks if the character is a sibling of the target character? 
+
+is_spouse_of = <character>
+# Checks if the character is a spouse of the target character? 	
+
+is_valid_for_exploration = <bool>
+# Checks if character is valid for an exploration 
+
+num_of_children = <value>
+# Checks the number of children of the character 
+
+num_of_spouses = <value>
+# Checks the number of spouses of the character 
+
+num_of_traits = <value>
+# Checks the number of traits the character has 
+
+modifier_utility = <key>
+# Checks the AI utility of a modifier 
+
+modifier_utility_include_locations = <key>
+# Checks the AI utility of a modifier with location checks 	
+
+religious_figure_type = <key>
+# Checks if a character is a specific type of religious figure 
+
+ruled_country_on_or_after = <date>
+# Checks if the character ruled the country on or after a given date? 
+
+valid_estate_for_heir_selection = <heir_selection>
+# Checks if the character's estate is allowed for the target heir selection 
+
+modifier_utility = <value>
+# Checks the AI utility of a modifier
+
+modifier_utility_include_locations = <value>
+# Checks the AI utility of a modifier with location checks 
+
+num_of_traits_of_category = {
+    type = <trait_category>
+    value = <integer>
+}
+# The number of traits of a specified category the character has. 
+
+add_static_modifier_utility = {
+    modifier = <key>
+    value = <script_value>
+}
+# Checks the AI utility of adding a static modifier to the scoped object 
+
+remove_static_modifier_utility = {
+    modifier = <key>
+    value = <script_value>
+}
+# Checks the AI utility of removing a static modifier from the scoped object 

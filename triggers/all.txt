@@ -1,0 +1,348 @@
+#--------------------------------------------------------------------------------
+# Scope: None
+#--------------------------------------------------------------------------------
+# ----- Flow -----
+Flow triggers are used to control how other triggers are executed.
+
+all_false = { 
+    <triggers> 
+}
+# true if all children are false (equivalent to NOR) 
+
+and = { 
+    <triggers> 
+}
+# all inside trigger must be true 
+
+any_false = { 
+    <triggers> 
+}
+# true if any child is false (equivalent to NAND) 
+
+calc_true_if = {
+    amount = <value>
+    
+    <triggers>
+}
+# Returns true if the specified number of sub-triggers return true 
+
+custom_description = {
+    text = <loc key>
+    subject = <scope> # optional
+    object = <scope> # optional
+    value = <script value> # optional
+    
+    <triggers>
+}
+# Wraps triggers that get a custom description instead of the auto-generated one 
+
+hidden_trigger = {
+    <triggers>
+}
+# Enclosed triggers are not shown in tooltips 
+
+# ----- Actions -----
+These act as effects within a trigger scope.
+
+debug_log = <string>
+# Log whether the parent trigger succeeded or failed 
+
+debug_log_details = <string>
+# Log whether the parent trigger succeeded or failed. Log which children succeeded or failed 
+
+random_integer = <value>
+# Uniformly random integer between 0 and 2^31-1. It will be the same if evaluated on the same scope and day. 
+
+save_temporary_scope_as = <id>
+# Saves a temporary target for use during the trigger execution 
+
+save_temporary_scope_value_as = {
+    name = <id>
+    value = <value> / <bool>
+}
+# Saves a numerical or bool value as an arbitrarily-named temporary target to be referenced later in the same effect 
+
+assert_if = {
+    limit = {
+        <trigger>
+    }
+    
+    text = <string> / <loc key>
+}
+# Conditionally cause an assert during run time 
+
+assert_read = <bool> / <string>
+# Conditionally cause an assert during read time 
+
+# ----- List / Variable -----
+These are triggers related to variables and variable lists.
+
+is_in_list = <list>
+# Checks if a target in in a list 
+
+has_variable = <variable>
+# Checks whether the current scope has the specified variable set 
+
+has_variable_list = <variable list>
+# Checks whether the current scope has the specified variable list set 
+
+has_local_variable = <variable>
+# Checks whether the current scope has the specified variable set 
+
+has_local_variable_list = <variable list>
+# Checks whether the current scope has the specified variable list set 
+
+has_global_variable = <variable>
+# Checks whether the current scope has the specified variable set 
+
+has_global_variable_list = <variable list>
+# Checks whether the current scope has the specified variable list set 
+
+global_variable_list_size = {
+    name = <variable>
+    value = <script_value> / <value>
+}
+# Checks the size of a variable list 
+
+is_target_in_global_variable_list = {
+    name = <variable>
+    target = <event_target>
+}
+# Checks if a target is in a variable list 
+
+is_target_in_local_variable_list = {
+    name = <variable>
+    target = <event_target>
+}
+# Checks if a target is in a variable list 
+
+is_target_in_variable_list = {
+    name = <variable>
+    target = <event_target>
+}
+# Checks if a target is in a variable list 
+
+add_to_temporary_list = <list>
+# Saves a temporary target for use during the trigger execution 
+# If used within an any-trigger, placement within the trigger is quite important.
+# The game will iterate through every instance of the any-trigger until it finds a single instance that fulfills the requirements, and then it will stop.
+# In order to add every instance of a scope that fulfills certain conditions, use "count = all" while also placing this "effect" at the very end of the any-trigger (so that every condition is evaluated for every iteration).
+
+list_size = {
+    name = <list_name>
+    value = <script_value>
+}
+# Checks the size of a list 
+
+local_variable_list_size = {
+    name = <variable_name>
+    value = <script_value>
+}
+# Checks the size of a variable list 
+
+variable_list_size = {
+    name = <variable_name>
+    value = <script_value>
+}
+# Checks the size of a variable list 
+
+# ----- General -----
+always = <bool> / <scope>
+# Checks if the assigned yes/no value is true 
+
+ai_will_do = <value>
+# Gets the AI evaluation score of the supplied generic action ofr the supplied country 
+
+scope_type = <scope_type>
+# Checks the type of the scope object 
+
+release_only = <bool>
+# Checks if the game is in release mode or not. 
+
+debug_only = <bool>
+# Checks if the game is in debug mode or not. 
+
+exists = <scope>
+# Checks whether the specified scope target exists (check for not being the null object) 
+
+tag_exists = <scope>
+# Does a tag exist 
+
+time_of_year = {
+    min = <month.day> / <month>
+    max = <month.day> / <month>
+}
+# Check if the current date is within the bounds 
+
+current_date = <date>
+# Compare the current ingame date
+
+current_month = <month>
+# Compare the current ingame month (1..12) 
+
+current_year = <year>
+# Compare the current ingame year
+
+country_exists = <country>
+# Does the country exist? 
+
+current_age = <age>
+# Checks if it is a certain age
+
+dynasty_exists = <dynasty>
+# Does a dynasty exist
+
+has_dlc = <string>
+# Does the host have this DLC 
+
+has_fired_unique_event = <id>
+# Checks if the game has already fired the unique event 
+
+has_game_rule = <id>
+# Is the given game rule setting enabled?
+
+has_local_dlc = <string>
+# Does the host have this DLC 
+
+has_multiple_players = <bool>
+# Does the game have at least two players currently connected? 
+
+has_newsletter_subscription = <bool>
+# Has the player suscribed to the newsletter? 
+
+ironman = <bool>
+# Checks if the game is running in ironman. 
+
+is_alert_shown = <key>
+# Is the alert with the specified name shown? 
+
+is_alert_triggered = <key>
+# Is the alert with the specified name triggered? 
+
+is_camera_in_zoom_level = <key>
+# Is camera in a specified zoom level? SMALL / MEDIUM / LARGE 
+
+is_map_mode_active = <key>
+# Is map mode active? 
+
+is_multiplayer_session = <bool>
+# Is the current game session multiplayer? 
+
+is_set = <scope>
+# Checks whether the specified scope target has been set (includes being the null object) 
+
+is_situation_active = <situation>
+# Checks if the target situation is currently active 
+
+# ----- Tutorial -----
+is_tutorial_active = <bool>
+# Is the tutorial active? 
+
+is_tutorial_lesson_active = <tutorial_lession>
+# Is this the current tutorial lesson? 
+
+is_tutorial_lesson_chain_completed = <tutorial_lession>
+# Has the tutorial lesson chain with the specified key been finished? 
+
+is_tutorial_lesson_completed = <tutorial_lession>
+# Has the tutorial lesson with the specified name been finished?
+
+is_tutorial_lesson_step_completed = <tutorial_lession_step>
+# Has the tutorial lesson step been finished? 
+
+is_gamestate_tutorial_active = <bool>
+# Is the gamestate tutorial active? See save_progress_in_gamestate in tutorial_lesson_chains documentation. 
+
+can_start_tutorial_lesson = <tutorial lession>
+# Can the specified tutorial lesson be started? 
+
+# ----- GUI -----
+is_widgetid_open = <key>
+# Is the widget with the specified `widgetid` open (visible and not animating)?
+# The fastest and safest way to check. (replaces old `is_widget_open` functionality, which operated on names.) 
+
+is_tooltip_with_name_open = <key>
+# Is the tooltip with the specified name open? 
+
+current_tooltip_depth = <value>
+# What is the number of tooltips open right now? 
+
+# ----- Internation Organization -----
+unique_international_organization_type_exists = <international_organization_type>
+# Does an international organization of this type exist? 
+
+international_organization_can_add_land = <international_organization>
+# Can we add a location to the scope international organization? 
+
+international_organization_can_remove_land = <international_organization>
+# Can we remove a location from the scope international organization? 
+
+ai_issue_voting_bias = <value>
+# Gets the AI evaluation score for voting bias from the international organization 
+
+# ----- Disease -----
+disease_is_active = <disease>
+# Checks if a disease is active in the world. 
+
+disease_outbreak_is_active = <disease_outbreak>
+# Checks if a disease outbreak is active in the world. 
+
+# ----- Diplomacy -----
+can_add_relation = {
+    first = <country>
+    second = <country>
+    type = <relation type>
+}
+# Can the country have the specified scripted relation with another country. 
+
+# ----- World -----
+world_art_quality = <value>
+# Checks the total art quality in the world 
+
+world_culture_group_percentage = {
+    culture_group = <culture_group>
+    value = <value>
+}
+# Gets the percentage of the population that follow a particular culture group in the world 
+
+world_culture_group_population = {
+    culture_group = <culture_group>
+    value = <value>
+}
+# Gets the absolute number of the population that follow a particular culture group in the world 
+
+world_culture_percentage = {
+    culture = <culture>
+    value = <value>
+}
+# Gets the percentage of the population that follow a particular culture in the world 
+
+world_culture_population = {
+    culture = <culture>
+    value = <value>
+}
+# Gets the absolute number of the population that follow a particular culture in the world 
+
+world_religion_group_percentage = {
+    religion_group = <religion_group>
+    value = <value>
+}
+# Gets the percentage of the population that follow a particular religion group in the world 
+
+world_religion_group_population = {
+    religion_group = <religion_group>
+    value = <value>
+}
+# Gets the absolute number of the population that follow a particular religion group in the world 
+
+world_religion_percentage = {
+    religion = <religion>
+    value = <value>
+}
+# Gets the percentage of the population that follow a particular religion in the world 
+
+world_religion_population = {
+    religion = <religion>
+    value = <value>
+}
+# Gets the absolute number of the population that follow a particular religion in the world 

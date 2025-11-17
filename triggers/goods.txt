@@ -1,0 +1,59 @@
+#--------------------------------------------------------------------------------
+# Scope: Goods
+#--------------------------------------------------------------------------------
+food_value = <value>
+# Check the food value of the goods scope. 
+
+goods_category = <key>
+# Checks the goods category - raw_material or produced 
+
+goods_method = <key>
+# Checks the goods method - mining/farming/hunting/gathering 
+
+has_tag = <key>
+# Check if that object has the specified tag. 
+
+is_demanded_in_market = <market>
+# Check if the goods scope is demanded in the target market. 
+
+is_demanded_in_market_by_buildings = <market>
+# Check if the goods scope is demanded in the target market by buildings. 
+
+is_demanded_in_market_by_burgher_trades = <market>
+# Check if the goods scope is demanded in the target market by burgher trades. 
+
+is_demanded_in_market_by_constructions = <market>
+# Check if the goods scope is demanded in the target market by constructions. 
+
+is_demanded_in_market_by_pops = <market>
+# Check if the goods scope is demanded in the target market by pops.
+
+is_demanded_in_market_by_roads = <market>
+# Check if the goods scope is demanded in the target market by roads.
+
+is_demanded_in_market_by_trades = <market>
+# Check if the goods scope is demanded in the target market by trades. 
+
+is_demanded_in_market_by_units = <market>
+# Check if the goods scope is demanded in the target market by units.
+
+is_food = <bool>
+# Check if a goods is food 
+
+is_in_surplus_in_market = <value>
+# Gets the possible trade surplus of the scope goods in the target market. 
+
+is_produced_by_production_method = <key>
+# Returns true if the trade good is produced by the specified production method. 
+
+is_used_by_production_method = <key>
+# Returns true if the trade good is used by the specified production method. 
+
+raw_material_occurrence = <value>
+# Check how many locations world wide produce this raw material 
+
+price_in_market = {
+    market = <market>
+    value = <value>
+}
+# Gets the price of the scoped goods in the supplied market 

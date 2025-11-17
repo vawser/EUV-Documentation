@@ -1,0 +1,68 @@
+#--------------------------------------------------------------------------------
+# Scope: Building
+#--------------------------------------------------------------------------------
+building_category = <id>
+# Checks if a building is linked to a certain category 
+
+building_employed_amount = <value>
+# What's the current effective amount of employed workers
+
+building_employment_size_amount = <value>
+# What's the max workers amount? 
+
+building_goods_input = <value>
+# Check how much goods the scope building requires. 
+
+building_index = <value>
+# Checks building index (order in which it was built) 
+
+building_level = <value>
+# Check the level of this building
+
+building_levels_under_construction = <value>
+# Check the level of this building whilst under construction
+
+building_max_level = <value>
+# Check the max level for a building 
+
+building_pop_type = <pop_type>
+# Checks if a building is linked to a certain pop type 
+
+building_potential_profit = <value>
+# Checks how much profit the building could make if at full worker capacity
+
+building_produced_goods = <goods>
+# Checks if a building produces a certain good 
+
+building_profit = <value>
+# Checks building profit 
+
+has_tag = <scope>
+# Check if that object has the specified tag. 
+
+is_at_max_level = <bool>
+# Checks if a building is working at full capacity 
+
+is_building_owned_by = <country>
+# Checks if a building is owned by a country 
+
+is_full_capacity = <bool>
+# Checks if a building is working at full capacity 
+
+is_lacking_goods = <bool>
+# Checks if a building is lacking goods 
+
+is_max_level = <bool>
+# Checks if a building is at maximum level 
+
+is_not_profitable = <bool>
+# Checks if a building is not profitable or not has prfot at all 
+
+is_opened = <bool>
+# Checks if a building is opened 
+
+is_profitable = <bool>
+# Checks if a building is profitable 
+
+is_subsidized = <bool>
+# Checks if a building is subsidized 

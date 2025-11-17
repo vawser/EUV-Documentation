@@ -1,0 +1,242 @@
+#--------------------------------------------------------------------------------
+# Scope: International Organization
+#--------------------------------------------------------------------------------
+# ----- General -----
+has_international_organization_modifier = <key>
+# Checks if the scoped international organization have a given modifier 
+
+combined_unique_special_status_power = <value>
+
+country_has_special_status = <country>
+# Does the country have a special status in this international organization? 
+
+has_special_status_available = <special_status>
+# Checks if an international organization has a particular special status available 
+
+average_special_status_power = {
+    type = <special_status>
+    value = <value>
+}
+# Get the average political power of the target special status. 
+
+can_annex_members = <country>
+# Can a country annex members in the scope international organization? 
+
+can_initiate_policy_votes = <country>
+#  	Can a country initiate votes in the scope international organization? 
+
+country_has_been_member_for_years = {
+    country = <country>
+    value = <value>
+}
+# Checks if the country has been in the current international organization scope for x years. 
+# Usage: country_has_been_member_for_years(country)
+
+has_active_resolution = <bool>
+# Does the scope international organization/situation have any active resolutions? 
+
+has_cached_or_cast_vote_for = <country>
+# Has the supplied country voted or has a cached vote from previous month on the supplied resolution for a specific target in the scope international organization/situation? 
+
+has_cooldown = <key>
+# Does a country have a particular cooldown active 
+
+has_elections = <bool>
+# Checks if an international organization has electors 
+
+has_land_ownership_rule = <bool>
+# Checks if the international organization has a landownership rule set 
+
+has_location = <location>
+# Is the supplied location owned by the scope international organization? 
+
+has_member = <country>
+# Checks if an international organization has a certain member 
+
+has_voted = <country>
+# Has the supplied country voted on the supplied resolution in the scope international organization/situation? 
+
+has_voted_for = <country>
+# Has the supplied country voted on the supplied resolution for a specific target in the scope international organization/situation? 
+
+is_relevant = <country>
+# Checks if an international organization is relevant to the supplied country 
+
+international_organization_can_own_land = <bool>
+# Can the international organization own land? 
+
+international_organization_has_internal_peace  = <bool>
+# Checks if no member country is in a direct war with another member country 
+
+international_organization_has_law = <key>
+# Has the scope international organization enacted a policy for the supplied law? 
+
+international_organization_has_laws = <bool>
+# Has the scope international organization enacted a policy for the supplied law? 
+
+international_organization_has_leader = <bool>
+# Does the international organization have a leader country? 
+
+international_organization_has_policy = <key>
+# Has the scope international organization enacted the supplied policy? 
+
+international_organization_leader_count = <value>
+# Checks how many leaders (defined as 'leaders' in the IO type) are currently present in the current international organization 
+
+international_organization_leader_reign = <value>
+# Checks if the ruler of an international organization has ruled for x years
+
+international_organization_leader_reign_in_days = <value> 
+# Checks if the ruler of an international organization has ruled for x days 
+
+international_organization_lifetime = <value>
+# Checks if the international organization has existed for x years 
+
+international_organization_lifetime_in_days  = <value>
+# Checks if the international organization has existed for x days 
+
+international_organization_locations_owned_percentage  = <value>
+# The percentage of the locations of an international organization owned by a country
+
+international_organization_num_locations = <value>
+# Checks if an international organization has a certain amount of owned locations 
+
+international_organization_population = <value>
+# Checks if an international organization has a certain population based on the locations it owns 
+
+is_international_organization_unique = <bool>
+# Is the international organization unique? 
+
+law_enabled_to_international_organization  = <key>
+# Can we select a policy for a law in the scope international organization? 
+
+law_is_locked_in_international_organization = <key>
+# Is a law locked in the scope international organization? 
+
+law_visible_to_international_organization = <key>
+# Can we see a policy for a law in the scope international organization? 
+
+leader_change_method = <type>
+# Check if the international organization has the specified leader changed method (rotation/vote/lottery/none) 
+
+leader_change_trigger_type = <type>
+# Check if the international organization has the specified leader changed trigger type (rulerchang/timed/none) 
+
+leader_special_status_power = <value>
+# Get the special status power of all special statuses with the 'leader' trait 
+
+leader_special_status_power_fraction = <value>
+# Get the fraction of the special status power of all special statuses with the 'leader' trait 
+
+# ----- Diplomacy -----
+io_within_diplomatic_range = <country>
+# Is the target international organization within diplomatic range? 
+
+# ----- Parliament -----
+has_parliament = <bool>
+# Checks if the country / international organization has a parliament 
+
+is_active_parliament = <bool>
+# country has an active parliament called 
+
+has_ongoing_parliament_debate = <bool>
+# Country / international organization has an active parliament debate 
+
+# ----- Governance -----
+government_power = <value>
+# How much government power does the country/IO have? 
+
+government_power_percentage = <value>
+# How high the percentage of the current government power compared to the maximum does the country/IO have? 
+
+prestige = <value>
+# How much prestige does the country/IO have? 
+
+prestige_percentage = <value>
+# How high the percentage of the current prestige compared to the maximum does the country/IO have? 
+
+legitimacy = <value>
+# How much legitimacy does the country/IO have? 
+
+legitimacy_percentage = <value>
+# How high the percentage of the current legitimacy compared to the maximum does the country/IO have? 
+
+republican_tradition = <value>
+# How much republican_tradition does the country/IO have? 
+
+republican_tradition_percentage = <value>
+# How high the percentage of the current republican_tradition compared to the maximum does the country/IO have? 
+
+devotion = <value>
+# How much devotion does the country/IO have? 
+
+devotion_percentage = <value>
+# How high the percentage of the current devotion compared to the maximum does the country/IO have? 
+
+horde_unity = <value>
+# How much horde_unity does the country/IO have? 
+
+horde_unity_percentage = <value>
+# How high the percentage of the current horde_unity compared to the maximum does the country/IO have? 
+
+tribal_cohesion = <value>
+# How much tribal_cohesion does the country/IO have? 
+
+tribal_cohesion_percentage = <value>
+# How high the percentage of the current tribal_cohesion compared to the maximum does the country/IO have?
+
+honor = <value>
+# How much honor does the country/IO have? 
+
+honor_percentage = <value>
+# How high the percentage of the current honor compared to the maximum does the country/IO have? 
+
+yanantin = <value>
+# How much yanantin does the country/IO have? 
+
+yanantin_percentage = <value>
+# How high the percentage of the current yanantin compared to the maximum does the country/IO have? 
+
+karma = <value>
+# How much karma does the country/IO have? 
+
+karma_percentage = <value>
+# How high the percentage of the current karma compared to the maximum does the country/IO have? 
+
+doom = <value>
+# How much doom does the country/IO have? 
+
+doom_percentage = <value>
+# How high the percentage of the current doom compared to the maximum does the country/IO have? 
+
+harmony = <value>
+# How much harmony does the country/IO have? 
+
+harmony_percentage = <value>
+# How high the percentage of the current harmony compared to the maximum does the country/IO have? 
+
+# ----- Economy -----
+has_enabled_currency = <key>
+#  	Checks what currency has been enabled for the international organization (manpower, sailors, gold) 
+
+currency_percentage_towards_limit = <value>
+# Gets currency progress towards specified limit 
+
+gold = <value>
+# How much gold does the country/IO have? 
+
+gold_percentage = <value>
+# How high the percentage of the current gold compared to the maximum does the country/IO have? 
+
+inflation = <value>
+# How much inflation does the country/IO have? 
+
+inflation_percentage = <value>
+# How high the percentage of the current inflation compared to the maximum does the country/IO have? 
+
+# ----- Military -----
+army_tradition = <value>
+# Checks the army tradition a country has.
+
+army_tradition_percentage = <value>
+# Checks the army tradition as a percentage a country has.
