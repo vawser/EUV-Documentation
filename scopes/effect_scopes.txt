@@ -1,0 +1,249 @@
+#-----------------------------------
+# Iterator Effects
+#-----------------------------------
+The three types iterator effects can use these parameters:
+
+every_<list> = {
+    # Filters the list based on the triggers
+    limit = {
+        <triggers>
+    }
+    
+    <effects>
+}
+
+ordered_<list> = {
+    # Filters the list based on the triggers
+    limit = {
+        <triggers>
+    }
+    
+    order_by = <value>
+    
+    position = <value>  # Optional
+    min = <value>       # Optional
+    max = <value>       # Optional
+    check_range_bounds = <bool> # If you don't want an error logged if the list is smaller than the min/max
+    
+    <effects>
+}
+
+
+random_<list> = {
+    # Filters the list based on the triggers
+    limit = {
+        <triggers>
+    }
+    
+    weight = {
+        <min mtth>
+        <max mtth>
+    }
+    # Optional
+    
+    <effects>
+}
+
+The -> indicates the inner scope the iterator targets.
+
+Only the every_ scope is noted below, assume the ordered_ and random_scopes exist too unless noted otherwise.
+
+#-----------------
+# Scope: None
+#-----------------
+
+#-----------------
+# Scope: None
+#-----------------
+
+#-----------------
+# Scope: Country
+#-----------------
+every_accepted_culture -> culture
+# Iterate through all accepted cultures in a country 
+
+every_active_disaster -> disaster
+# Iterate through all active disasters for a country 
+
+#-----------------
+# Scope: Character
+#-----------------
+every_ancestor -> character
+# Iterate through all ancestors (parents, grandparents etc) of a character 
+
+every_child -> character
+# Iterate through all children of a character 
+
+every_close_relative -> character
+# Iterate through all close relatives of a character 
+
+every_descendant -> character
+# Iterate through all descendants (children, grandchildren etc) of a character 
+
+every_parent -> character
+# Iterate through parents (order: father, mother) of a character. 
+
+every_ruling_countries -> country
+# Iterate through countries a character rulers 
+
+every_spouse -> character
+# Iterate through all spouses of a character 
+
+every_work_of_art_by_creator -> work_of_art
+# Iterate through all work_of_art by a particular artist 
+
+#-----------------
+# Scope: Building Type
+#-----------------
+every_construction_material_for_building_type -> goods
+# Iterate through all goods required to construct a building type 
+
+#-----------------
+# Scope: Building
+#-----------------
+every_production_method_of_building -> production_method
+# Iterate through all available production methods of the building. 
+
+#-----------------
+# Scope: Continent
+#-----------------
+every_country_with_capital_in_geography -> country
+# Iterate through all countries which have their capital in the specified geography 
+
+every_present_country -> country
+# Iterate through all countries in the specified geography 
+
+every_present_overlord -> country
+# Iterate through all countries which have a subject in the specified geography 
+
+every_location_in_continent -> location
+# Iterate through all Locations in a continent 
+
+every_ownable_location_in_continent -> location
+# Iterate through all ownable Locations in a continent 
+
+every_sub_continent_in_continent -> sub_continent
+# Iterate through all sub-continents in a continent 
+
+#-----------------
+# Scope: Sub-Continent
+#-----------------
+every_country_with_capital_in_geography -> country
+# Iterate through all countries which have their capital in the specified geography 
+
+every_present_country -> country
+# Iterate through all countries in the specified geography 
+
+every_present_overlord -> country
+# Iterate through all countries which have a subject in the specified geography 
+
+#-----------------
+# Scope: Region
+#-----------------
+every_country_with_capital_in_geography -> country
+# Iterate through all countries which have their capital in the specified geography 
+
+every_present_country -> country
+# Iterate through all countries in the specified geography 
+
+every_present_overlord -> country
+# Iterate through all countries which have a subject in the specified geography 
+
+#-----------------
+# Scope: Province Definition
+#-----------------
+every_country_with_capital_in_geography -> country
+# Iterate through all countries which have their capital in the specified geography 
+
+every_present_country -> country
+# Iterate through all countries in the specified geography 
+
+every_present_overlord -> country
+# Iterate through all countries which have a subject in the specified geography 
+
+#-----------------
+# Scope: Area
+#-----------------
+every_adjacent_ports_to_area -> location
+# Iterate through all adjacent ports of an seazone area 
+
+every_location_in_area -> location
+# Iterate through all Locations in a area
+
+every_neighbor_area -> area
+# Iterate through all neighboring areas in a area 
+
+every_ownable_location_in_area -> location
+# Iterate through all ownable Locations in an area 
+
+every_privateer_in_area -> privateer
+# Iterate through all privateers in a area
+
+every_province_definition_in_area -> province_definition
+# Iterate through all province-definitions in an area 
+
+every_province_in_area -> province
+# Iterate through all provinces in an area 
+
+every_country_with_capital_in_geography -> country
+# Iterate through all countries which have their capital in the specified geography 
+
+every_present_country -> country
+# Iterate through all countries in the specified geography 
+
+every_present_overlord -> country
+# Iterate through all countries which have a subject in the specified geography 
+
+#-----------------
+# Scope: Location
+#-----------------
+every_country_with_capital_in_geography -> country
+# Iterate through all countries which have their capital in the specified geography 
+
+every_present_country -> country
+# Iterate through all countries in the specified geography 
+
+every_present_overlord -> country
+# Iterate through all countries which have a subject in the specified geography 
+
+#-----------------
+# Scope: Active Resolution
+#-----------------
+every_voter -> country
+# Iterate through all voters in an active resolution 
+
+#-----------------
+# Scope: Combat Side
+#-----------------
+every_center -> sub_unit
+# Iterate through all subunits on the center of a combat-side 
+
+every_left_flank -> sub_unit
+# Iterate through all subunits on the left-flank of a combat-side 
+
+every_participating_countries -> country
+# Iterate through all Countrys participating in 1 side of a combat 
+
+every_participating_units -> unit
+# Iterate through all units participating in 1 side of a combat 
+
+every_reserves -> sub_unit
+# Iterate through all subunits on the reserve of a combat-side 
+
+every_retreated -> sub_unit
+# Iterate through all subunits on the retreated of a combat-side 
+
+every_right_flank -> sub_unit
+# Iterate through all subunits on the right-flank of a combat-side 
+
+#-----------------
+# Scope: None
+#-----------------
+
+#-----------------
+# Scope: None
+#-----------------
+
+#-----------------
+# Scope: None
+#-----------------
